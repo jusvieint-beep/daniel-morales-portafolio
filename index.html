@@ -314,7 +314,11 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
   function renderRoles() {
     $('roles').innerHTML = R.map(function (r, i) {
       var on = i === role;
-      return '<button type="button" data-i="' + i + '" aria-pressed="' + on + '" style="flex:1 1 108px;min-width:108px;height:' + r.h + 'px;text-align:left;cursor:pointer;border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;transition:all .25s;' + (on ? 'background:#FF8F73;color:#1A0E09;border:1px solid #FF8F73;box-shadow:0 16px 40px -16px rgba(255,143,115,.7)' : 'background:#1E2847;color:#F4F6FA;border:1px solid rgba(255,255,255,.16)') + '"><span class="mono" style="display:block;font-size:11px;margin-bottom:6px">' + esc(r.dates) + '</span><span style="display:block;font-size:14px;font-weight:600;line-height:1.25">' + esc(r.title) + '</span></button>';
+      var current = i === R.length - 1;
+      var look = current
+        ? 'background:#FFD25E;color:#121A30;border:1px solid #FFD25E;' + (on ? 'box-shadow:0 16px 40px -16px rgba(255,210,94,.75)' : '')
+        : (on ? 'background:#FF8F73;color:#1A0E09;border:1px solid #FF8F73;box-shadow:0 16px 40px -16px rgba(255,143,115,.7)' : 'background:#1E2847;color:#F4F6FA;border:1px solid rgba(255,255,255,.16)');
+      return '<button type="button" data-i="' + i + '" aria-pressed="' + on + '" style="flex:1 1 108px;min-width:108px;height:' + r.h + 'px;text-align:left;cursor:pointer;border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;transition:all .25s;' + look + '"><span class="mono" style="display:block;font-size:11px;margin-bottom:6px">' + esc(r.dates) + '</span><span style="display:block;font-size:14px;font-weight:600;line-height:1.25">' + esc(r.title) + '</span></button>';
     }).join('');
     var s = R[role];
     $('sel-period').textContent = s.period;

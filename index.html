@@ -343,23 +343,63 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
   }).join('');
 
   var D = [
-    { short: 'Mapa de cobertura', title: 'Mapa de geolocalización y cobertura por vías', tags: ['Prototipo en validación', 'Geolocalización', 'IA'], media: 'Mapa, áreas de cobertura y propuesta de nuevas sedes.', blocks: [
-      ['El reto', 'Saber qué casos quedan realmente cubiertos por cada punto de atención según el tiempo de desplazamiento, y dónde conviene abrir puntos nuevos.'],
-      ['La solución', 'Mapa que calcula la cobertura desde cada punto hacia afuera por todas las vías, con tiempos promedio por vía en niveles de 10, 20 y 30 minutos, en hora valle y hora pico y según el horario de atención. Cruza esas áreas con los casos atendidos y usa IA para proponer automáticamente la ubicación de nuevas sedes según una meta de cobertura.'],
-      ['Mi parte', 'Levantamiento de la necesidad, definición de las reglas de cálculo, construcción con IA y validación por versiones.'],
-      ['La prueba', 'Probado con 68.994 registros de datos abiertos de otro país, sin usar información interna.'] ] },
-    { short: 'Dashboards de productividad', title: 'Dos dashboards de productividad para la operación', tags: ['Dashboards', 'Productividad'], media: 'Vistas de los dos dashboards.', blocks: [
-      ['El reto', 'Dar visibilidad a la productividad de las diferentes partes del proceso operativo.'],
-      ['La solución', 'Dos dashboards de productividad que muestran el avance de cada etapa del proceso operativo para facilitar el seguimiento y la toma de decisiones.'],
-      ['Mi parte', 'Levantamiento de los indicadores, construcción con IA y validación con el área.'] ] },
-    { short: 'Seguimiento de proyectos', title: 'Aplicación de seguimiento de proyectos', tags: ['Gestión de proyectos', 'App web'], media: 'Tablero de proyectos y seguimiento por etapas.', blocks: [
-      ['El reto', 'Hacer seguimiento ordenado a las mejoras de procesos y a la ejecución de nuevos desarrollos.'],
-      ['La solución', 'Aplicación a la medida para registrar cada mejora o desarrollo y seguir el cumplimiento de sus etapas, desde el levantamiento hasta el lanzamiento.'],
-      ['Mi parte', 'Diseño del flujo de seguimiento a partir del proceso real, construcción con IA y puesta en uso.'] ] },
-    { short: 'Calendario académico', title: 'Calendario académico con recordatorios por WhatsApp', tags: ['Proyecto propio', 'Automatización'], media: 'Calendario, panel administrativo y recordatorios de WhatsApp.', blocks: [
-      ['El reto', 'Mantener al día entregas, sesiones y grabaciones de un grupo de estudiantes, sin errores de fechas ni cambios perdidos.'],
-      ['La solución', 'Calendario público y panel administrativo que se actualiza desde Excel o desde una tabla en la plataforma, valida todo antes de guardar, muestra qué cambia y permite deshacer. Envía recordatorios automáticos por WhatsApp.'],
-      ['Mi parte', 'Definición de las reglas (tipos de evento, vencimientos, duplicados), construcción con IA y pruebas automáticas.'] ] }
+    { short: 'Mapa de cobertura', title: 'Mapa de cobertura vial para la asistencia de siniestros', tags: ['Prototipo en validación', 'Geolocalización', 'IA'], media: 'Mapa, áreas de cobertura por vía y propuesta de nuevas sedes.', blocks: [
+      ['El reto', 'Saber qué casos atendidos de asistencia a siniestros viales quedan realmente dentro del tiempo de llegada de cada sede, firma o abogado, y dónde conviene abrir nuevos puntos de atención para cubrir los que quedan por fuera.'],
+      ['La solución', 'Mapa interactivo que calcula la cobertura real desde cada punto de atención hacia afuera por todas las vías, con niveles de 10, 20 y 30 minutos. Cruza esas áreas con los siniestros atendidos para mostrar qué porcentaje queda dentro o fuera, y propone automáticamente dónde ubicar nuevas sedes hasta alcanzar una meta de cobertura.'],
+      ['Funcionalidades clave', [
+        'Cobertura por vía o en radio circular, en hora valle, hora pico o por hora del día.',
+        'Horario de atención por punto y filtro de sedes abiertas a una hora dada.',
+        'Carga de sedes, firmas, abogados y siniestros desde Excel, con validación de coordenadas, duplicados y casos sospechosos.',
+        'Ruta sede → siniestro con distancia y tiempo estimado.',
+        'Sedes temporales para simular escenarios, arrastrables y exportables.',
+        'Propuesta automática de sedes por cantidad o por meta de cobertura (%), en general, por región o por ciudad, con la tabla de aporte de cada sede.'
+      ]],
+      ['Mi parte', [
+        'Levanté la necesidad con la operación: qué casos se atienden, desde qué puntos y qué significa «llegar a tiempo».',
+        'Definí las reglas de cálculo y de negocio, documentadas en 27 decisiones de diseño.',
+        'Diseñé la lógica de la propuesta de sedes: maximizar los siniestros nuevos cubiertos, con meta de cobertura, máximo de sedes y mínimo de casos por sede.',
+        'Construí la aplicación con IA a partir de esas reglas.',
+        'La validé versión por versión (de la 2.0 a la 3.3), detectando y corrigiendo errores de cálculo y diferencias de tiempos frente a otras fuentes.'
+      ]],
+      ['La prueba', 'Probado con 68.994 siniestros viales georreferenciados de datos abiertos (CONASET, Chile 2025), sin usar información interna de la empresa.'] ] },
+    { short: 'Dashboards de productividad', title: 'Dashboards de productividad en tiempo real', tags: ['Dashboards', 'Tiempo real', 'Productividad'], media: 'Vistas de los dos dashboards.', blocks: [
+      ['El reto', 'La operación no tenía una forma ágil de medir su productividad mientras sucedía: el avance de cada etapa se conocía tarde y las decisiones se tomaban sin una vista consolidada.'],
+      ['La solución', 'Dos dashboards que mejoran la medición en tiempo real de la operación. Muestran la productividad de las diferentes partes del proceso operativo en una sola vista, para detectar a tiempo dónde se acumula el trabajo y actuar antes de que afecte los resultados.'],
+      ['Mi parte', [
+        'Levanté con la operación qué necesitaba medir cada parte del proceso y con qué frecuencia.',
+        'Diseñé los dashboards según las necesidades de la operación: indicadores, vistas y organización de la información para que cada responsable encuentre lo que necesita.',
+        'Definí los cálculos de productividad por etapa del proceso.',
+        'Construí los dos dashboards con IA y los validé con el área antes de ponerlos en uso.'
+      ]] ] },
+    { short: 'Gestión de proyectos', title: 'Aplicación para la gestión de proyectos y desarrollos', tags: ['Gestión de proyectos', 'App web', 'Carga laboral'], media: 'Tablero de proyectos, carga por encargado y entregas por semana.', blocks: [
+      ['El reto', 'Las mejoras de procesos y los nuevos desarrollos avanzaban sin una vista común: no era fácil saber cuánta carga tenía cada encargado, en qué parte del proceso iba cada proyecto ni qué debía entregarse cada semana.'],
+      ['La solución', 'Aplicación a la medida para gestionar los proyectos y desarrollos de la operación. Permite hacer un mejor seguimiento a cada encargado y mejora el cumplimiento de los tiempos estimados.'],
+      ['Funcionalidades clave', [
+        'Carga laboral visible por encargado y por área.',
+        'Estado de cada proyecto según la parte del proceso en la que se encuentra.',
+        'Proyectos por entregar organizados por semana.',
+        'Seguimiento desde el levantamiento hasta el lanzamiento.'
+      ]],
+      ['Mi parte', [
+        'Levanté el proceso real de gestión de proyectos: etapas, responsables y puntos de control.',
+        'Diseñé el flujo de seguimiento y las vistas según las necesidades del equipo y de la dirección.',
+        'Construí la aplicación con IA y la puse en uso con los encargados.'
+      ]] ] },
+    { short: 'Calendario académico', title: 'Calendario académico centralizado con notificaciones automáticas', tags: ['Proyecto propio', 'Automatización', 'WhatsApp'], media: 'Calendario, panel administrativo y notificaciones de WhatsApp.', blocks: [
+      ['El reto', 'No había orden en la información: próximas sesiones, entregas, grabaciones, cuestionarios y foros estaban dispersos, y era fácil perder una fecha o un enlace.'],
+      ['La solución', 'Se centralizó toda la información en un calendario que se puede consultar desde cualquier dispositivo, sin iniciar sesión, con claridad sobre cada actividad. Además, un bot conectado envía automáticamente por WhatsApp notificaciones de los eventos cercanos.'],
+      ['Funcionalidades clave', [
+        'Vista mensual y de agenda, con las próximas actividades siempre visibles.',
+        'Sesiones, grabaciones, entregas, cuestionarios y foros, cada uno con su color, estado (pendiente, vence pronto, vencido) y enlace directo.',
+        'Panel administrativo que actualiza el calendario desde Excel o desde una tabla en la plataforma, con vista previa de cambios, respaldo y opción de deshacer.',
+        'Resumen diario de las actividades del día siguiente y aviso antes de cada sesión, por WhatsApp.'
+      ]],
+      ['Mi parte', [
+        'Identifiqué el problema de información dispersa y definí qué debía mostrar el calendario.',
+        'Definí las reglas de cada tipo de actividad: horarios, vencimientos, duplicados y orden de prioridad.',
+        'Construí la aplicación con IA y configuré la conexión con el bot de WhatsApp.',
+        'La validé con pruebas automáticas antes de ponerla en uso.'
+      ]] ] }
   ];
   var dev = 0, elapsed = 0, pinned = false;
   function renderDev(animate) {
@@ -370,7 +410,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     var d = D[dev];
     $('dev-tags').innerHTML = d.tags.map(function (g) { return '<span style="font-size:12px;font-weight:600;background:rgba(255,255,255,.1);padding:5px 12px;border-radius:999px">' + esc(g) + '</span>'; }).join('');
     $('dev-title').textContent = d.title;
-    $('dev-blocks').innerHTML = d.blocks.map(function (k) { return '<div style="display:flex;flex-direction:column;gap:4px"><span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#FFD25E">' + esc(k[0]) + '</span><span style="font-size:15px;line-height:1.6;color:#D3D9E4">' + esc(k[1]) + '</span></div>'; }).join('');
+    $('dev-blocks').innerHTML = d.blocks.map(function (k) {
+      var body = Array.isArray(k[1])
+        ? '<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px">' + k[1].map(function (b) { return '<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>' + esc(b) + '</span></li>'; }).join('') + '</ul>'
+        : '<span style="font-size:15px;line-height:1.6;color:#D3D9E4">' + esc(k[1]) + '</span>';
+      return '<div style="display:flex;flex-direction:column;gap:6px"><span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#FFD25E">' + esc(k[0]) + '</span>' + body + '</div>';
+    }).join('');
     $('dev-media').textContent = d.media;
     renderBar();
     if (animate) { var el = $('devpanel'); el.classList.remove('fade'); void el.offsetWidth; el.classList.add('fade'); }

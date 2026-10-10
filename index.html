@@ -396,17 +396,25 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
       reto: 'Las mejoras de procesos y los nuevos desarrollos avanzaban sin una vista común: no era fácil saber cuánta carga tenía cada encargado, en qué parte del proceso iba cada proyecto ni qué debía entregarse cada semana.',
       solucion: 'Aplicación a la medida para gestionar los proyectos y desarrollos de la operación. Permite hacer un mejor seguimiento a cada encargado y mejora el cumplimiento de los tiempos estimados.',
       funcs: [
-        'Carga laboral visible por encargado y por área.',
-        'Estado de cada proyecto según la parte del proceso en la que se encuentra.',
-        'Proyectos por entregar organizados por semana.',
-        'Seguimiento desde el levantamiento hasta el lanzamiento.'
+        'Flujo por estados: solicitado, desarrollo, QA, capacitación, producción y completado.',
+        'Cuatro vistas del mismo portafolio: tarjetas, tabla, Gantt e informe gerencial.',
+        'Informe con proyectos por entregar esta semana y la próxima, vencidos, casos por persona y por estado.',
+        'Carga laboral visible por encargado y por área, con filtros por prioridad, estado, área y encargado.',
+        'Ficha de cada proyecto con avances, tiempo en cada estado, imágenes, documentos y entregas como videos de capacitación o actas.'
       ],
       parte: [
         'Levanté el proceso real de gestión de proyectos: etapas, responsables y puntos de control.',
-        'Diseñé el flujo de seguimiento y las vistas según las necesidades del equipo y de la dirección.',
+        'Diseñé el flujo de estados, desde la solicitud hasta la puesta en producción, incluyendo QA y capacitación.',
+        'Diseñé las vistas según las necesidades del equipo y de la dirección: tarjetas para el día a día, Gantt para los tiempos e informe para la gerencia.',
         'Construí la aplicación con IA y la puse en uso con los encargados.'
       ],
-      media: 'Tablero de proyectos, carga por encargado y entregas por semana.', images: [] },
+      media: 'Tablero de proyectos, carga por encargado y entregas por semana.', images: [
+        { src: 'img/proy-1.webp', min: 'img/proy-1-min.webp', alt: 'Informe gerencial con indicadores y gráficas de casos por persona y por estado', cap: 'Informe gerencial: proyectos por entregar esta semana y la próxima, vencidos, casos por persona y por estado, y tabla ordenable. Datos de ejemplo.' },
+        { src: 'img/proy-2.webp', min: 'img/proy-2-min.webp', alt: 'Tablero de tarjetas agrupado por estado', cap: 'Vista de tarjetas agrupada por estado, desde la solicitud hasta completado, con prioridad y encargado de cada proyecto. Datos de ejemplo.' },
+        { src: 'img/proy-3.webp', min: 'img/proy-3-min.webp', alt: 'Ficha de proyecto con comentarios y avances', cap: 'Ficha del proyecto: registro de comentarios y avances ordenados por fecha.' },
+        { src: 'img/proy-4.webp', min: 'img/proy-4-min.webp', alt: 'Ficha de proyecto con el tiempo en cada estado', cap: 'Tiempo que el proyecto permanece en cada estado; si vuelve a un estado anterior se abre un tramo nuevo, visible en el Gantt.' },
+        { src: 'img/proy-5.webp', min: 'img/proy-5-min.webp', alt: 'Ficha de proyecto con entregas y videos de capacitación', cap: 'Entregas del proyecto: enlaces a videos de capacitación y actas de entrega.' }
+      ] },
     { short: 'Calendario académico', title: 'Calendario académico centralizado con notificaciones automáticas', tags: ['Proyecto propio', 'Automatización', 'WhatsApp'],
       reto: 'No había orden en la información: próximas sesiones, entregas, grabaciones, cuestionarios y foros estaban dispersos, y era fácil perder una fecha o un enlace.',
       solucion: 'Se centralizó toda la información en un calendario que se puede consultar desde cualquier dispositivo, sin iniciar sesión, con claridad sobre cada actividad. Además, un bot conectado envía automáticamente por WhatsApp notificaciones de los eventos cercanos.',

@@ -430,7 +430,13 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         'Construí la aplicación con IA y configuré la conexión con el bot de WhatsApp.',
         'La validé con pruebas automáticas antes de ponerla en uso.'
       ],
-      media: 'Calendario, panel administrativo y notificaciones de WhatsApp.', images: [] }
+      media: 'Calendario, panel administrativo y notificaciones de WhatsApp.', images: [
+        { src: 'img/cal-1.webp', min: 'img/cal-1-min.webp', alt: 'Calendario académico en vista mensual con próximas actividades', cap: 'Vista mensual: cada tipo de actividad con su color y filtro, y las 5 próximas actividades siempre visibles con su estado.' },
+        { src: 'img/cal-2.webp', min: 'img/cal-2-min.webp', alt: 'Calendario académico en vista de agenda', cap: 'Vista de agenda: todas las actividades del mes en orden cronológico; las sesiones ya realizadas quedan tachadas.' },
+        { src: 'img/cal-3.webp', min: 'img/cal-3-min.webp', alt: 'Detalle de las actividades de un día', cap: 'Al tocar un día se ven todas sus actividades: grabaciones, sesiones y espacios de dudas.' },
+        { src: 'img/cal-4.webp', min: 'img/cal-4-min.webp', alt: 'Detalle de una sesión con fecha, hora, instructor y botón para ingresar', cap: 'Detalle de una sesión con fecha, hora, instructor y botón para ingresar directamente. Enlace de la reunión oculto por seguridad.' },
+        { src: 'img/cal-5.webp', min: 'img/cal-5-min.webp', alt: 'Notificaciones automáticas del calendario en WhatsApp', cap: 'Notificaciones automáticas por WhatsApp: resumen de las actividades del día siguiente y aviso 2 horas antes de cada sesión. Enlaces ocultos por seguridad.' }
+      ] }
   ];
   var dev = 0, elapsed = 0, pinned = false, imgIdx = 0, lbOpen = false;
   var label = function (txt) { return '<span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#FFD25E">' + esc(txt) + '</span>'; };

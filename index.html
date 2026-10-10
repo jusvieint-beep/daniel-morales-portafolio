@@ -44,6 +44,7 @@ button{font:inherit}
 .nav a{text-decoration:none;color:#F4F6FA;padding:10px 14px;border-radius:999px}
 .nav a:hover{background:rgba(255,255,255,.08);color:#F4F6FA}
 button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2px}
+#lightbox[hidden]{display:none !important}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 </style>
 </head>
@@ -195,23 +196,24 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <div style="flex:1 1 auto;height:4px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden"><div id="devbar" style="height:100%;border-radius:4px;width:0;background:#FFD25E;transition:width 1s linear"></div></div>
 <button id="devtoggle" type="button" style="font-size:13px;font-weight:600;min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;background:transparent;color:#F4F6FA;border:1px solid rgba(255,255,255,.3);white-space:nowrap"></button>
 </div>
-<div id="devpanel" class="fade grad row" style="border-radius:28px;padding:32px;gap:32px" role="tabpanel" aria-live="polite">
-<div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:16px">
+<div id="devpanel" class="fade grad" style="border-radius:28px;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:24px" role="tabpanel" aria-live="polite">
+<div class="row" style="gap:24px 36px;align-items:flex-start">
+<div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:16px">
 <div id="dev-tags" class="row" style="gap:8px"></div>
 <h3 id="dev-title" class="disp" style="font-weight:600;font-size:clamp(26px,3vw,34px);line-height:1.12;margin:0"></h3>
-<div id="dev-blocks" style="display:flex;flex-direction:column;gap:16px"></div>
+<div id="dev-intro" style="display:flex;flex-direction:column;gap:14px"></div>
 </div>
-<div style="flex:1.3 1 440px;min-width:0;display:flex;flex-direction:column;gap:10px">
-<div style="aspect-ratio:16/10;border-radius:18px;border:2px dashed rgba(255,255,255,.28);background:rgba(18,26,48,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px">
-<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#BAC3D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M21 16l-5-5-9 9"></path></svg>
-<span style="font-size:15px;font-weight:500">Imágenes y videos del desarrollo · próximamente</span>
-<span id="dev-media" style="font-size:13px;color:#BAC3D3"></span>
+<div id="dev-media" style="flex:1.45 1 440px;min-width:0;display:flex;flex-direction:column;gap:10px"></div>
 </div>
-<div style="display:flex;gap:10px" aria-hidden="true">
-<div style="flex:1 1 0;aspect-ratio:4/3;border-radius:12px;border:1px dashed rgba(255,255,255,.22)"></div>
-<div style="flex:1 1 0;aspect-ratio:4/3;border-radius:12px;border:1px dashed rgba(255,255,255,.22)"></div>
-<div style="flex:1 1 0;aspect-ratio:4/3;border-radius:12px;border:1px dashed rgba(255,255,255,.22)"></div>
+<div id="dev-details" class="row" style="gap:16px"></div>
 </div>
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden style="position:fixed;inset:0;z-index:50;background:rgba(8,12,24,.92);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+<button id="lb-close" type="button" aria-label="Cerrar" style="position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:#1E2847;color:#F4F6FA;font-size:20px;cursor:pointer">✕</button>
+<img id="lb-img" alt="" style="max-width:min(1400px,100%);max-height:78vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)">
+<div style="display:flex;align-items:center;gap:14px;max-width:900px;width:100%">
+<button id="lb-prev" type="button" aria-label="Imagen anterior" style="flex:none;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:#1E2847;color:#F4F6FA;font-size:18px;cursor:pointer">‹</button>
+<p id="lb-cap" style="flex:1;margin:0;text-align:center;font-size:15px;line-height:1.5;color:#D3D9E4"></p>
+<button id="lb-next" type="button" aria-label="Imagen siguiente" style="flex:none;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:#1E2847;color:#F4F6FA;font-size:18px;cursor:pointer">›</button>
 </div>
 </div>
 </section>
@@ -343,65 +345,95 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
   }).join('');
 
   var D = [
-    { short: 'Mapa de cobertura', title: 'Mapa de cobertura vial para la asistencia de siniestros', tags: ['Prototipo en validación', 'Geolocalización', 'IA'], media: 'Mapa, áreas de cobertura por vía y propuesta de nuevas sedes.', blocks: [
-      ['El reto', 'Saber qué casos atendidos de asistencia a siniestros viales quedan realmente dentro del tiempo de llegada de cada sede, firma o abogado, y dónde conviene abrir nuevos puntos de atención para cubrir los que quedan por fuera.'],
-      ['La solución', 'Mapa interactivo que calcula la cobertura real desde cada punto de atención hacia afuera por todas las vías, con niveles de 10, 20 y 30 minutos. Cruza esas áreas con los siniestros atendidos para mostrar qué porcentaje queda dentro o fuera, y propone automáticamente dónde ubicar nuevas sedes hasta alcanzar una meta de cobertura.'],
-      ['Funcionalidades clave', [
-        'Cobertura por vía o en radio circular, en hora valle, hora pico o por hora del día.',
+    { short: 'Mapa de cobertura', title: 'Mapa de cobertura vial para la asistencia de siniestros', tags: ['Prototipo en validación', 'Geolocalización', 'IA'],
+      reto: 'Saber qué casos atendidos de asistencia a siniestros viales quedan realmente dentro del tiempo de llegada de cada sede, firma o abogado, y dónde conviene abrir nuevos puntos de atención para cubrir los que quedan por fuera.',
+      solucion: 'Mapa interactivo que calcula la cobertura real desde cada punto de atención hacia afuera por todas las vías, con niveles de tiempo o distancia parametrizables. Cruza esas áreas con los siniestros atendidos para mostrar qué porcentaje queda dentro o fuera, y propone automáticamente dónde ubicar nuevas sedes hasta alcanzar una meta de cobertura.',
+      prueba: 'Probado con 68.994 siniestros viales georreferenciados de datos abiertos (CONASET, Chile 2025), sin usar información interna de la empresa.',
+      funcs: [
+        'Cobertura por vía o en radio circular, con niveles por tiempo o por kilómetros configurables para cada punto.',
+        'Escenarios de hora valle, hora pico o por hora del día, con franjas y velocidades editables.',
         'Horario de atención por punto y filtro de sedes abiertas a una hora dada.',
         'Carga de sedes, firmas, abogados y siniestros desde Excel, con validación de coordenadas, duplicados y casos sospechosos.',
-        'Ruta sede → siniestro con distancia y tiempo estimado.',
-        'Sedes temporales para simular escenarios, arrastrables y exportables.',
-        'Propuesta automática de sedes por cantidad o por meta de cobertura (%), en general, por región o por ciudad, con la tabla de aporte de cada sede.'
-      ]],
-      ['Mi parte', [
+        'Ruta sede → siniestro con distancia y tiempo estimado por vía.',
+        'Propuesta automática de sedes por cantidad o por meta de cobertura (%), en general, por región o por ciudad.'
+      ],
+      parte: [
         'Levanté la necesidad con la operación: qué casos se atienden, desde qué puntos y qué significa «llegar a tiempo».',
         'Definí las reglas de cálculo y de negocio, documentadas en 27 decisiones de diseño.',
         'Diseñé la lógica de la propuesta de sedes: maximizar los siniestros nuevos cubiertos, con meta de cobertura, máximo de sedes y mínimo de casos por sede.',
         'Construí la aplicación con IA a partir de esas reglas.',
         'La validé versión por versión (de la 2.0 a la 3.3), detectando y corrigiendo errores de cálculo y diferencias de tiempos frente a otras fuentes.'
-      ]],
-      ['La prueba', 'Probado con 68.994 siniestros viales georreferenciados de datos abiertos (CONASET, Chile 2025), sin usar información interna de la empresa.'] ] },
-    { short: 'Dashboards de productividad', title: 'Dashboards de productividad en tiempo real', tags: ['Dashboards', 'Tiempo real', 'Productividad'], media: 'Vistas de los dos dashboards.', blocks: [
-      ['El reto', 'La operación no tenía una forma ágil de medir su productividad mientras sucedía: el avance de cada etapa se conocía tarde y las decisiones se tomaban sin una vista consolidada.'],
-      ['La solución', 'Dos dashboards que mejoran la medición en tiempo real de la operación. Muestran la productividad de las diferentes partes del proceso operativo en una sola vista, para detectar a tiempo dónde se acumula el trabajo y actuar antes de que afecte los resultados.'],
-      ['Mi parte', [
+      ],
+      images: [
+        { src: 'img/mapa-1.webp', min: 'img/mapa-1-min.webp', alt: 'Mapa de la Región Metropolitana de Santiago con siniestros y 11 sedes propuestas', cap: 'Propuesta automática de 11 sedes para la Región Metropolitana de Santiago, con las asistencias que cubre cada una.' },
+        { src: 'img/mapa-2.webp', min: 'img/mapa-2-min.webp', alt: 'Ventana de detalle de una sede propuesta en Peñalolén', cap: 'Detalle de una sede propuesta: escenario, franjas horarias, horario de atención y niveles de cobertura calculados sobre la red vial real.' },
+        { src: 'img/mapa-3.webp', min: 'img/mapa-3-min.webp', alt: 'Ruta por vía desde una sede propuesta hasta un siniestro', cap: 'Ruta por vía desde la sede propuesta hasta un siniestro: 3,0 km en 8 minutos en hora valle, frente a 2,7 km en línea recta.' },
+        { src: 'img/mapa-4.webp', min: 'img/mapa-4-min.webp', alt: 'Ruta de 44 kilómetros en zona rural', cap: 'Cobertura en zona rural: la ruta hasta un siniestro alejado recorre 44 km en 30 minutos, fuera de las áreas de cobertura.' }
+      ] },
+    { short: 'Dashboards de productividad', title: 'Dashboards de productividad en tiempo real', tags: ['Dashboards', 'Tiempo real', 'Productividad'],
+      reto: 'La operación no tenía una forma ágil de medir su productividad mientras sucedía: el avance de cada etapa se conocía tarde y las decisiones se tomaban sin una vista consolidada.',
+      solucion: 'Dos dashboards que mejoran la medición en tiempo real de la operación. Muestran la productividad de las diferentes partes del proceso operativo en una sola vista, para detectar a tiempo dónde se acumula el trabajo y actuar antes de que afecte los resultados.',
+      parte: [
         'Levanté con la operación qué necesitaba medir cada parte del proceso y con qué frecuencia.',
         'Diseñé los dashboards según las necesidades de la operación: indicadores, vistas y organización de la información para que cada responsable encuentre lo que necesita.',
         'Definí los cálculos de productividad por etapa del proceso.',
         'Construí los dos dashboards con IA y los validé con el área antes de ponerlos en uso.'
-      ]] ] },
-    { short: 'Gestión de proyectos', title: 'Aplicación para la gestión de proyectos y desarrollos', tags: ['Gestión de proyectos', 'App web', 'Carga laboral'], media: 'Tablero de proyectos, carga por encargado y entregas por semana.', blocks: [
-      ['El reto', 'Las mejoras de procesos y los nuevos desarrollos avanzaban sin una vista común: no era fácil saber cuánta carga tenía cada encargado, en qué parte del proceso iba cada proyecto ni qué debía entregarse cada semana.'],
-      ['La solución', 'Aplicación a la medida para gestionar los proyectos y desarrollos de la operación. Permite hacer un mejor seguimiento a cada encargado y mejora el cumplimiento de los tiempos estimados.'],
-      ['Funcionalidades clave', [
+      ],
+      media: 'Vistas de los dos dashboards.', images: [] },
+    { short: 'Gestión de proyectos', title: 'Aplicación para la gestión de proyectos y desarrollos', tags: ['Gestión de proyectos', 'App web', 'Carga laboral'],
+      reto: 'Las mejoras de procesos y los nuevos desarrollos avanzaban sin una vista común: no era fácil saber cuánta carga tenía cada encargado, en qué parte del proceso iba cada proyecto ni qué debía entregarse cada semana.',
+      solucion: 'Aplicación a la medida para gestionar los proyectos y desarrollos de la operación. Permite hacer un mejor seguimiento a cada encargado y mejora el cumplimiento de los tiempos estimados.',
+      funcs: [
         'Carga laboral visible por encargado y por área.',
         'Estado de cada proyecto según la parte del proceso en la que se encuentra.',
         'Proyectos por entregar organizados por semana.',
         'Seguimiento desde el levantamiento hasta el lanzamiento.'
-      ]],
-      ['Mi parte', [
+      ],
+      parte: [
         'Levanté el proceso real de gestión de proyectos: etapas, responsables y puntos de control.',
         'Diseñé el flujo de seguimiento y las vistas según las necesidades del equipo y de la dirección.',
         'Construí la aplicación con IA y la puse en uso con los encargados.'
-      ]] ] },
-    { short: 'Calendario académico', title: 'Calendario académico centralizado con notificaciones automáticas', tags: ['Proyecto propio', 'Automatización', 'WhatsApp'], media: 'Calendario, panel administrativo y notificaciones de WhatsApp.', blocks: [
-      ['El reto', 'No había orden en la información: próximas sesiones, entregas, grabaciones, cuestionarios y foros estaban dispersos, y era fácil perder una fecha o un enlace.'],
-      ['La solución', 'Se centralizó toda la información en un calendario que se puede consultar desde cualquier dispositivo, sin iniciar sesión, con claridad sobre cada actividad. Además, un bot conectado envía automáticamente por WhatsApp notificaciones de los eventos cercanos.'],
-      ['Funcionalidades clave', [
+      ],
+      media: 'Tablero de proyectos, carga por encargado y entregas por semana.', images: [] },
+    { short: 'Calendario académico', title: 'Calendario académico centralizado con notificaciones automáticas', tags: ['Proyecto propio', 'Automatización', 'WhatsApp'],
+      reto: 'No había orden en la información: próximas sesiones, entregas, grabaciones, cuestionarios y foros estaban dispersos, y era fácil perder una fecha o un enlace.',
+      solucion: 'Se centralizó toda la información en un calendario que se puede consultar desde cualquier dispositivo, sin iniciar sesión, con claridad sobre cada actividad. Además, un bot conectado envía automáticamente por WhatsApp notificaciones de los eventos cercanos.',
+      funcs: [
         'Vista mensual y de agenda, con las próximas actividades siempre visibles.',
         'Sesiones, grabaciones, entregas, cuestionarios y foros, cada uno con su color, estado (pendiente, vence pronto, vencido) y enlace directo.',
         'Panel administrativo que actualiza el calendario desde Excel o desde una tabla en la plataforma, con vista previa de cambios, respaldo y opción de deshacer.',
         'Resumen diario de las actividades del día siguiente y aviso antes de cada sesión, por WhatsApp.'
-      ]],
-      ['Mi parte', [
+      ],
+      parte: [
         'Identifiqué el problema de información dispersa y definí qué debía mostrar el calendario.',
         'Definí las reglas de cada tipo de actividad: horarios, vencimientos, duplicados y orden de prioridad.',
         'Construí la aplicación con IA y configuré la conexión con el bot de WhatsApp.',
         'La validé con pruebas automáticas antes de ponerla en uso.'
-      ]] ] }
+      ],
+      media: 'Calendario, panel administrativo y notificaciones de WhatsApp.', images: [] }
   ];
-  var dev = 0, elapsed = 0, pinned = false;
+  var dev = 0, elapsed = 0, pinned = false, imgIdx = 0, lbOpen = false;
+  var label = function (txt) { return '<span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#FFD25E">' + esc(txt) + '</span>'; };
+  var para = function (lbl, txt) { return '<div style="display:flex;flex-direction:column;gap:5px">' + label(lbl) + '<span style="font-size:15px;line-height:1.6;color:#D3D9E4">' + esc(txt) + '</span></div>'; };
+  var bullets = function (arr) { return '<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">' + arr.map(function (b) { return '<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>' + esc(b) + '</span></li>'; }).join('') + '</ul>'; };
+  var detailCard = function (lbl, arr, accent) { return '<div style="flex:1 1 360px;min-width:0;background:rgba(18,26,48,.55);border:1px solid ' + (accent ? 'rgba(255,210,94,.45)' : 'rgba(255,255,255,.12)') + ';border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px">' + label(lbl) + bullets(arr) + '</div>'; };
+
+  function renderMedia() {
+    var d = D[dev], box = $('dev-media');
+    if (!d.images.length) {
+      box.innerHTML = '<div style="aspect-ratio:16/10;border-radius:18px;border:2px dashed rgba(255,255,255,.28);background:rgba(18,26,48,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#BAC3D3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><path d="M21 16l-5-5-9 9"></path></svg><span style="font-size:15px;font-weight:500">Imágenes del desarrollo · próximamente</span><span style="font-size:13px;color:#BAC3D3">' + esc(d.media) + '</span></div>';
+      return;
+    }
+    var im = d.images[imgIdx];
+    var main = '<button type="button" data-zoom="1" aria-label="Ampliar imagen: ' + esc(im.alt) + '" style="position:relative;display:block;width:100%;padding:0;border:1px solid rgba(255,255,255,.16);border-radius:18px;overflow:hidden;cursor:zoom-in;background:#0B0F1A;aspect-ratio:16/10"><img src="' + im.src + '" alt="' + esc(im.alt) + '" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"><span style="position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:600;background:rgba(18,26,48,.85);color:#F4F6FA;padding:6px 10px;border-radius:999px">Ampliar ⤢</span></button>';
+    var cap = '<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#BAC3D3">' + esc(im.cap) + '</p>';
+    var thumbs = '<div style="display:grid;grid-template-columns:repeat(' + d.images.length + ',minmax(0,1fr));gap:8px">' + d.images.map(function (x, i) {
+      var on = i === imgIdx;
+      return '<button type="button" data-img="' + i + '" aria-label="Ver imagen ' + (i + 1) + '" aria-pressed="' + on + '" style="padding:0;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:16/10;background:#0B0F1A;border:2px solid ' + (on ? '#FFD25E' : 'rgba(255,255,255,.14)') + ';opacity:' + (on ? '1' : '.7') + '"><img src="' + x.min + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></button>';
+    }).join('') + '</div>';
+    box.innerHTML = main + thumbs + cap;
+  }
+
   function renderDev(animate) {
     $('devtabs').innerHTML = D.map(function (d, i) {
       var on = i === dev;
@@ -410,13 +442,9 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     var d = D[dev];
     $('dev-tags').innerHTML = d.tags.map(function (g) { return '<span style="font-size:12px;font-weight:600;background:rgba(255,255,255,.1);padding:5px 12px;border-radius:999px">' + esc(g) + '</span>'; }).join('');
     $('dev-title').textContent = d.title;
-    $('dev-blocks').innerHTML = d.blocks.map(function (k) {
-      var body = Array.isArray(k[1])
-        ? '<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px">' + k[1].map(function (b) { return '<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>' + esc(b) + '</span></li>'; }).join('') + '</ul>'
-        : '<span style="font-size:15px;line-height:1.6;color:#D3D9E4">' + esc(k[1]) + '</span>';
-      return '<div style="display:flex;flex-direction:column;gap:6px"><span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#FFD25E">' + esc(k[0]) + '</span>' + body + '</div>';
-    }).join('');
-    $('dev-media').textContent = d.media;
+    $('dev-intro').innerHTML = para('El reto', d.reto) + para('La solución', d.solucion) + (d.prueba ? para('La prueba', d.prueba) : '');
+    $('dev-details').innerHTML = (d.funcs ? detailCard('Funcionalidades clave', d.funcs, false) : '') + detailCard('Mi parte', d.parte, true);
+    renderMedia();
     renderBar();
     if (animate) { var el = $('devpanel'); el.classList.remove('fade'); void el.offsetWidth; el.classList.add('fade'); }
   }
@@ -426,14 +454,36 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     bar.style.background = pinned ? '#FF8F73' : '#FFD25E';
     $('devtoggle').textContent = pinned ? '▶ Reanudar' : '❚❚ Pausar';
   }
-  $('devtabs').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { dev = +b.getAttribute('data-i'); elapsed = 0; pinned = true; renderDev(true); } });
+
+  function openLb() {
+    var d = D[dev]; if (!d.images.length) return;
+    var im = d.images[imgIdx];
+    $('lb-img').src = im.src; $('lb-img').alt = im.alt; $('lb-cap').textContent = im.cap + '  (' + (imgIdx + 1) + ' de ' + d.images.length + ')';
+    $('lightbox').hidden = false; lbOpen = true; document.body.style.overflow = 'hidden'; $('lb-close').focus();
+  }
+  function closeLb() { $('lightbox').hidden = true; lbOpen = false; document.body.style.overflow = ''; }
+  function stepLb(n) { var len = D[dev].images.length; imgIdx = (imgIdx + n + len) % len; renderMedia(); openLb(); }
+  $('dev-media').addEventListener('click', function (e) {
+    var t = e.target.closest('button'); if (!t) return;
+    if (t.hasAttribute('data-img')) { imgIdx = +t.getAttribute('data-img'); pinned = true; renderMedia(); renderBar(); }
+    else if (t.hasAttribute('data-zoom')) { openLb(); }
+  });
+  $('lb-close').addEventListener('click', closeLb);
+  $('lb-prev').addEventListener('click', function () { stepLb(-1); });
+  $('lb-next').addEventListener('click', function () { stepLb(1); });
+  $('lightbox').addEventListener('click', function (e) { if (e.target === this) closeLb(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lbOpen) return;
+    if (e.key === 'Escape') closeLb(); else if (e.key === 'ArrowRight') stepLb(1); else if (e.key === 'ArrowLeft') stepLb(-1);
+  });
+  $('devtabs').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { dev = +b.getAttribute('data-i'); imgIdx = 0; elapsed = 0; pinned = true; renderDev(true); } });
   $('devtoggle').addEventListener('click', function () { pinned = !pinned; elapsed = 0; renderBar(); });
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) { pinned = true; }
   setInterval(function () {
-    if (pinned || document.hidden) return;
+    if (pinned || lbOpen || document.hidden) return;
     elapsed += 1;
-    if (elapsed >= 20) { dev = (dev + 1) % D.length; elapsed = 0; renderDev(true); } else { renderBar(); }
+    if (elapsed >= 20) { dev = (dev + 1) % D.length; imgIdx = 0; elapsed = 0; renderDev(true); } else { renderBar(); }
   }, 1000);
 
   var T = [

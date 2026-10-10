@@ -374,13 +374,24 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     { short: 'Dashboards de productividad', title: 'Dashboards de productividad en tiempo real', tags: ['Dashboards', 'Tiempo real', 'Productividad'],
       reto: 'La operación no tenía una forma ágil de medir su productividad mientras sucedía: el avance de cada etapa se conocía tarde y las decisiones se tomaban sin una vista consolidada.',
       solucion: 'Dos dashboards que mejoran la medición en tiempo real de la operación. Muestran la productividad de las diferentes partes del proceso operativo en una sola vista, para detectar a tiempo dónde se acumula el trabajo y actuar antes de que afecte los resultados.',
+      funcs: [
+        'Casos por fase del proceso, separados entre dentro y fuera del ANS.',
+        'Cumplimiento del ANS por etapa y tiempo promedio en horas hábiles.',
+        'Subestados con seguimiento propio (inspección, subasta y comités) y alertas por duración.',
+        'Detalle de casos por fase con la duración de cada etapa, la duración total y el ANS acumulado.',
+        'Monitoreo en tiempo real, con tiempos calculados en días hábiles.'
+      ],
       parte: [
         'Levanté con la operación qué necesitaba medir cada parte del proceso y con qué frecuencia.',
         'Diseñé los dashboards según las necesidades de la operación: indicadores, vistas y organización de la información para que cada responsable encuentre lo que necesita.',
         'Definí los cálculos de productividad por etapa del proceso.',
         'Construí los dos dashboards con IA y los validé con el área antes de ponerlos en uso.'
       ],
-      media: 'Vistas de los dos dashboards.', images: [] },
+      media: 'Vistas de los dos dashboards.', images: [
+        { src: 'img/dash-1.webp', min: 'img/dash-1-min.webp', alt: 'Tablero gerencial del proceso de peritos con fases, cumplimiento de ANS y subestados', cap: 'Tablero gerencial del proceso de peritos: casos por fase, cumplimiento del ANS por etapa, tiempo promedio y subestados de inspección, subasta y comités. Datos de demostración.' },
+        { src: 'img/dash-2.webp', min: 'img/dash-2-min.webp', alt: 'Tablero con el detalle de casos de una fase desplegado', cap: 'Al seleccionar una fase se despliega el detalle de sus casos sin salir del tablero. Datos de demostración.' },
+        { src: 'img/dash-3.webp', min: 'img/dash-3-min.webp', alt: 'Detalle de casos de la fase Envío Postura', cap: 'Detalle de Envío Postura: duración de cada etapa, subestado, duración total del proceso y cumplimiento del ANS acumulado, separando los casos dentro y fuera del ANS. Datos de demostración.' }
+      ] },
     { short: 'Gestión de proyectos', title: 'Aplicación para la gestión de proyectos y desarrollos', tags: ['Gestión de proyectos', 'App web', 'Carga laboral'],
       reto: 'Las mejoras de procesos y los nuevos desarrollos avanzaban sin una vista común: no era fácil saber cuánta carga tenía cada encargado, en qué parte del proceso iba cada proyecto ni qué debía entregarse cada semana.',
       solucion: 'Aplicación a la medida para gestionar los proyectos y desarrollos de la operación. Permite hacer un mejor seguimiento a cada encargado y mejora el cumplimiento de los tiempos estimados.',

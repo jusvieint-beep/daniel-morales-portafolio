@@ -50,7 +50,7 @@ button{font:inherit}
 .lift{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
 .lift:hover{transform:translateY(-6px);border-color:#FFD25E !important;box-shadow:0 18px 40px -18px rgba(255,210,94,.4)}
 .fade{animation:fadein .5s ease both}
-.blob{position:absolute;border-radius:50%;filter:blur(30px)}
+.blob{position:absolute;border-radius:50%;pointer-events:none;will-change:transform}
 .nav a{text-decoration:none;color:#F4F6FA;padding:10px 14px;border-radius:999px}
 .nav a:hover{background:rgba(255,255,255,.08);color:#F4F6FA}
 button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2px}
@@ -340,8 +340,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 </section>
 
 <section id="contacto" style="position:relative;overflow:hidden;background:#FFF3EA;color:#121A30;padding:110px 20px">
-<div class="blob" style="width:560px;height:560px;right:-140px;top:-180px;background:radial-gradient(circle,rgba(179,166,255,.55),rgba(179,166,255,0) 70%);filter:blur(24px);animation:floatB 14s ease-in-out infinite"></div>
-<div class="blob" style="width:420px;height:420px;left:-120px;bottom:-200px;background:radial-gradient(circle,rgba(255,143,115,.45),rgba(255,143,115,0) 70%);filter:blur(24px);animation:floatA 16s ease-in-out infinite"></div>
+<div class="blob" style="width:560px;height:560px;right:-140px;top:-180px;background:radial-gradient(circle,rgba(179,166,255,.55),rgba(179,166,255,0) 70%);animation:floatB 14s ease-in-out infinite"></div>
+<div class="blob" style="width:420px;height:420px;left:-120px;bottom:-200px;background:radial-gradient(circle,rgba(255,143,115,.45),rgba(255,143,115,0) 70%);animation:floatA 16s ease-in-out infinite"></div>
 <div class="wrap" style="position:relative">
 <div class="mono" style="font-size:13px;color:#A8341A;margin-bottom:16px">✦ Contacto</div>
 <h2 class="disp" style="font-weight:800;font-size:clamp(52px,10vw,140px);letter-spacing:-0.045em;line-height:.9;margin:0 0 28px">¿Hablamos?</h2>

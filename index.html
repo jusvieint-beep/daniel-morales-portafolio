@@ -9,6 +9,16 @@
 <meta property="og:title" content="Daniel Andres Morales · Workforce, procesos e IA">
 <meta property="og:description" content="Planeo equipos, mejoro procesos y creo aplicaciones con IA que reducen la carga laboral.">
 <meta property="og:locale" content="es_CO">
+<meta property="og:url" content="https://daniel-morales-portafolio.vercel.app/">
+<meta property="og:image" content="https://daniel-morales-portafolio.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Daniel Andres Morales · Planeo equipos, mejoro procesos y creo aplicaciones con IA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://daniel-morales-portafolio.vercel.app/">
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments)};</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 <meta name="theme-color" content="#121A30">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23121A30'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='26' text-anchor='middle' fill='%23F4F6FA'%3ED%3Ctspan fill='%23FFD25E'%3EM%3C/tspan%3E%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +55,8 @@ button{font:inherit}
 .nav a:hover{background:rgba(255,255,255,.08);color:#F4F6FA}
 button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2px}
 #lightbox[hidden]{display:none !important}
+.stl{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:560px){.stl{visibility:hidden}.stl.keep{visibility:visible;overflow:visible}.stl.last{display:flex;justify-content:flex-end;color:#FFD25E !important}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 </style>
 </head>
@@ -70,6 +82,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <a href="#trayectoria">Trayectoria</a>
 <a href="#desarrollos">Desarrollos</a>
 <a href="#conocimientos">Conocimientos</a>
+<a href="#microempresas">Microempresas</a>
 <a href="#contacto" style="color:#121A30;background:#F4F6FA;font-weight:600;padding:10px 16px">Hablemos</a>
 </nav>
 </header>
@@ -102,7 +115,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <div id="hero-chips" class="row" style="gap:8px"></div>
 </div>
 <div class="row" style="flex:1 1 240px;gap:12px">
-<a href="#desarrollos" style="background:#FFD25E;color:#121A30;text-decoration:none;padding:16px 24px;border-radius:14px;font-weight:600;font-size:16px">Ver lo que he construido →</a>
+<a id="hero-cta" href="#desarrollos" style="background:#FFD25E;color:#121A30;text-decoration:none;padding:16px 24px;border-radius:14px;font-weight:600;font-size:16px">Ver lo que he construido →</a>
 <a href="#contacto" style="border:1px solid rgba(255,255,255,.35);color:#F4F6FA;text-decoration:none;padding:15px 22px;border-radius:14px;font-weight:500;font-size:16px">Hablemos</a>
 </div>
 </div>
@@ -132,7 +145,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <div style="font-size:14px;color:#D3D9E4;margin-top:8px">como supervisor y analista sénior</div>
 </div>
 </div>
-<div id="stairs" style="display:flex;align-items:flex-end;gap:8px;height:110px" aria-hidden="true"></div>
+<div id="stairs" style="display:flex;align-items:flex-end;gap:6px;height:118px" aria-hidden="true"></div>
 </div>
 
 <div class="lift rv" style="flex:1 1 260px;min-width:0;background:#FFD25E;color:#121A30;border:1px solid #FFD25E;border-radius:24px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:300px">
@@ -143,10 +156,21 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 </div>
 </div>
 
+<div class="lift rv grad" style="flex:1 1 100%;min-width:0;border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:22px">
+<span class="mono" style="font-size:12px;color:#FFD25E">resultados de mis desarrollos</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px 28px">
+<div><div class="disp" style="font-weight:800;font-size:56px;line-height:.9;letter-spacing:-0.04em;color:#FFD25E">13</div><div style="font-size:15px;line-height:1.45;color:#D3D9E4;margin-top:8px">nuevas sedes formalizadas para atender siniestros sin cobertura (5 en Chile y 8 en Colombia)</div></div>
+<div><div class="disp" style="font-weight:800;font-size:56px;line-height:.9;letter-spacing:-0.04em;color:#FF8F73">96</div><div style="font-size:15px;line-height:1.45;color:#D3D9E4;margin-top:8px">proyectos gestionados, 66 completados con éxito y 30 en desarrollo</div></div>
+<div><div class="disp" style="font-weight:800;font-size:56px;line-height:.9;letter-spacing:-0.04em;color:#B3A6FF">≈120</div><div style="font-size:15px;line-height:1.45;color:#D3D9E4;margin-top:8px">personas de 2 fichas de formación organizan sus actividades con el calendario</div></div>
+<div><div class="disp" style="font-weight:800;font-size:56px;line-height:.9;letter-spacing:-0.04em;color:#F4F6FA">↑ ANS</div><div style="font-size:15px;line-height:1.45;color:#D3D9E4;margin-top:8px">mayor cumplimiento en los tiempos de peritaje con el seguimiento en línea de cada caso</div></div>
+</div>
+</div>
+
 <div class="lift rv card" style="flex:2 1 520px;min-width:0;padding:30px;display:flex;flex-direction:column;gap:14px">
 <span class="mono" style="display:flex;align-items:center;gap:8px;font-size:12px;color:#FFD25E"><span style="width:8px;height:8px;border-radius:50%;background:#FFD25E;box-shadow:0 0 12px #FFD25E"></span>Ahora mismo · 2025 – hoy</span>
 <div class="disp" style="font-weight:600;font-size:26px;line-height:1.2">Analista de Proyectos y QA de Desarrollo · Holding VML</div>
-<div id="now" style="display:flex;flex-direction:column;gap:8px"></div>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#D3D9E4">Levanto procesos y nuevos desarrollos, hago seguimiento a su ejecución y los valido antes del lanzamiento, en una mesa integral con análisis, desarrollo, proyectos y la gerencia administrativa.</p>
+<a href="#trayectoria" style="align-self:flex-start;font-size:15px;font-weight:600;color:#FFD25E;text-decoration:none;padding:6px 0">Ver el detalle en «El camino» →</a>
 </div>
 
 <div class="lift rv" style="flex:1 1 260px;min-width:0;background:#FF8F73;color:#1A0E09;border:1px solid #FF8F73;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px">
@@ -190,13 +214,13 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <section id="desarrollos" class="wrap" style="padding:110px 20px">
 <div class="kicker rv" style="color:#FFD25E">✦ Lo que he construido</div>
 <h2 class="h2 rv" style="margin-bottom:16px">Cuatro desarrollos con IA.</h2>
-<p class="lead rv" style="margin:0 0 36px">Cambian solos cada 20 segundos. Elige uno para dejarlo fijo y verlo con calma.</p>
+<p class="lead rv" style="margin:0 0 36px">Cambian solos cada 35 segundos y se detienen mientras lees. Elige uno para dejarlo fijo.</p>
 <div id="devtabs" class="row" style="gap:10px;margin-bottom:16px" role="tablist"></div>
 <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
 <div style="flex:1 1 auto;height:4px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden"><div id="devbar" style="height:100%;border-radius:4px;width:0;background:#FFD25E;transition:width 1s linear"></div></div>
 <button id="devtoggle" type="button" style="font-size:13px;font-weight:600;min-height:44px;padding:0 16px;border-radius:999px;cursor:pointer;background:transparent;color:#F4F6FA;border:1px solid rgba(255,255,255,.3);white-space:nowrap"></button>
 </div>
-<div id="devpanel" class="fade grad" style="border-radius:28px;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:24px" role="tabpanel" aria-live="polite">
+<div id="devpanel" class="fade grad" style="border-radius:28px;padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;gap:24px" role="tabpanel">
 <div class="row" style="gap:24px 36px;align-items:flex-start">
 <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:16px">
 <div id="dev-tags" class="row" style="gap:8px"></div>
@@ -225,6 +249,93 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <div class="rv row" style="margin-top:16px;gap:10px 28px;background:#18213B;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px 24px;font-size:15px;color:#D3D9E4">
 <span><strong style="color:#F4F6FA;font-weight:600">Idiomas ·</strong> Español nativo · Inglés básico (A2), con comprensión de la terminología BPO</span>
 <span><strong style="color:#F4F6FA;font-weight:600">Herramientas ·</strong> Excel avanzado · Office avanzado · Visual Studio Code</span>
+</div>
+</section>
+
+<section id="microempresas" style="background:#18213B;border-top:1px solid rgba(255,255,255,.12);padding:110px 20px">
+<div class="wrap">
+<div class="kicker rv" style="color:#FFD25E">✦ Para microempresas</div>
+<h2 class="h2 rv" style="margin-bottom:18px">Tu operación, organizada en una herramienta <span style="color:#FFD25E">hecha a tu medida.</span></h2>
+<p class="lead rv" style="margin:0 0 36px">Muchos negocios pequeños funcionan con cuadernos, hojas de Excel y chats de WhatsApp. Sirve hasta que el negocio crece: se pierden pedidos, nadie sabe qué hay en inventario y los números llegan tarde. Llevo años organizando operaciones; hoy convierto ese día a día en herramientas simples que tu equipo usa desde el celular.</p>
+
+<div class="rv row" style="gap:14px;margin-bottom:48px">
+<div class="card" style="flex:1 1 300px;min-width:0;padding:22px 24px;display:flex;gap:18px;align-items:center">
+<span class="disp" style="font-weight:800;font-size:44px;line-height:1;color:#FF8F73;flex:none">68,2 %</span>
+<span style="font-size:15px;line-height:1.5;color:#D3D9E4">de los micronegocios en Colombia no lleva ningún registro de su actividad.</span>
+</div>
+<div class="card" style="flex:1 1 300px;min-width:0;padding:22px 24px;display:flex;gap:18px;align-items:center">
+<span class="disp" style="font-weight:800;font-size:44px;line-height:1;color:#B3A6FF;flex:none">50,4 %</span>
+<span style="font-size:15px;line-height:1.5;color:#D3D9E4">no usa internet para su negocio.</span>
+</div>
+<p class="mono" style="flex:1 1 100%;margin:0;font-size:12px;color:#BAC3D3">Fuente: DANE, Encuesta de Micronegocios (EMICRON) 2024.</p>
+</div>
+
+<h3 class="disp rv" style="font-weight:600;font-size:clamp(24px,2.6vw,32px);margin:0 0 20px">Lo que puedo resolver en tu negocio</h3>
+<div class="row" style="gap:14px;margin-bottom:56px">
+<div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
+<span style="font-weight:600;font-size:18px">Agenda, citas y recordatorios</span>
+<span style="font-size:15px;line-height:1.55;color:#D3D9E4">Reservas organizadas y recordatorios automáticos por WhatsApp para que tus clientes no olviden su cita.</span>
+<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">ya lo hice · calendario académico</span>
+</div>
+<div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
+<span style="font-weight:600;font-size:18px">Pedidos y tareas al día</span>
+<span style="font-size:15px;line-height:1.55;color:#D3D9E4">Quién hace qué, en qué estado va cada pedido y para cuándo debe entregarse, visible para todo el equipo.</span>
+<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">ya lo hice · gestión de proyectos</span>
+</div>
+<div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
+<span style="font-weight:600;font-size:18px">Indicadores del negocio</span>
+<span style="font-size:15px;line-height:1.55;color:#D3D9E4">Ventas, gastos y productividad en un tablero que se actualiza solo, para decidir con datos y no a fin de mes.</span>
+<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">ya lo hice · dashboards de productividad</span>
+</div>
+<div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
+<span style="font-weight:600;font-size:18px">Turnos y personal</span>
+<span style="font-size:15px;line-height:1.55;color:#D3D9E4">Horarios ajustados a la demanda real de tu negocio, sin sobrecargar al equipo ni dejar horas sin atención.</span>
+<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">experiencia · 7 años en Workforce</span>
+</div>
+<div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
+<span style="font-weight:600;font-size:18px">Inventario y compras</span>
+<span style="font-size:15px;line-height:1.55;color:#D3D9E4">Saber qué tienes, qué se está agotando y qué debes pedir, sin contar a mano cada semana.</span>
+<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">experiencia · puesta en marcha de una empresa</span>
+</div>
+<div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
+<span style="font-weight:600;font-size:18px">Clientes y cobertura</span>
+<span style="font-size:15px;line-height:1.55;color:#D3D9E4">Registro de clientes y, si atiendes a domicilio, zonas de cobertura y tiempos de llegada en un mapa.</span>
+<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">ya lo hice · mapa de cobertura</span>
+</div>
+</div>
+
+<h3 class="disp rv" style="font-weight:600;font-size:clamp(24px,2.6vw,32px);margin:0 0 8px">Cómo trabajamos</h3>
+<p class="rv" style="font-size:16px;line-height:1.6;color:#D3D9E4;margin:0 0 22px;max-width:680px">Antes de construir, entendemos juntos el negocio. Y antes de invertir en la versión completa, ves un desarrollo base funcionando.</p>
+<div class="row" style="gap:12px;margin-bottom:28px">
+<div class="rv card" style="flex:1 1 200px;min-width:0;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px"><span class="disp" style="font-weight:800;font-size:36px;line-height:1;color:#FFD25E">01</span><span style="font-weight:600;font-size:17px">Mesa de trabajo conjunta</span><span style="font-size:14px;line-height:1.55;color:#D3D9E4">Nos sentamos contigo y tu equipo para entender cómo funciona hoy el negocio, dónde se pierde tiempo o dinero y qué es lo más urgente.</span></div>
+<div class="rv card" style="flex:1 1 200px;min-width:0;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px"><span class="disp" style="font-weight:800;font-size:36px;line-height:1;color:#FF8F73">02</span><span style="font-weight:600;font-size:17px">Proyecto formalizado</span><span style="font-size:14px;line-height:1.55;color:#D3D9E4">Dejo por escrito el alcance, las etapas, los tiempos y lo que vas a recibir. Sin sorpresas.</span></div>
+<div class="rv card" style="flex:1 1 200px;min-width:0;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px;border-color:rgba(255,210,94,.55)"><span class="disp" style="font-weight:800;font-size:36px;line-height:1;color:#B3A6FF">03</span><span style="font-weight:600;font-size:17px">Desarrollo base</span><span style="font-size:14px;line-height:1.55;color:#D3D9E4">Una primera versión funcional para que veas cómo será el resultado final antes de avanzar.</span></div>
+<div class="rv card" style="flex:1 1 200px;min-width:0;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px"><span class="disp" style="font-weight:800;font-size:36px;line-height:1;color:#FFD25E">04</span><span style="font-weight:600;font-size:17px">Ajustes y puesta en marcha</span><span style="font-size:14px;line-height:1.55;color:#D3D9E4">Mejoramos la herramienta con tus comentarios, capacito a tu equipo y la dejamos funcionando.</span></div>
+<div class="rv card" style="flex:1 1 200px;min-width:0;border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:10px"><span class="disp" style="font-weight:800;font-size:36px;line-height:1;color:#FF8F73">05</span><span style="font-weight:600;font-size:17px">Acompañamiento</span><span style="font-size:14px;line-height:1.55;color:#D3D9E4">Seguimiento al uso y nuevas mejoras cuando el negocio las necesite.</span></div>
+</div>
+
+<div class="rv row" style="gap:16px;align-items:stretch">
+<div class="grad" style="flex:2 1 460px;min-width:0;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:14px">
+<span class="mono" style="font-size:12px;color:#FFD25E">por qué conmigo</span>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>Entiendo el proceso antes que la tecnología: 8 años organizando operaciones, equipos y tiempos.</span></li>
+<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>Administré la puesta en marcha de una empresa: conozco el día a día de un negocio pequeño.</span></li>
+<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>Herramientas de bajo costo, fáciles de usar y que tu equipo puede administrar sin depender de un programador.</span></li>
+<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>Resultados comprobados: mis desarrollos ya se usan en operaciones reales.</span></li>
+</ul>
+<p style="margin:6px 0 0;font-size:13px;line-height:1.55;color:#BAC3D3">Para tener en cuenta: no reemplazo el software contable ni la facturación electrónica. Si ya los usas, la herramienta se organiza alrededor de ellos.</p>
+</div>
+<div style="flex:1 1 280px;min-width:0;background:#FFD25E;color:#121A30;border-radius:24px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;gap:18px">
+<div>
+<div class="disp" style="font-weight:800;font-size:28px;line-height:1.15">¿Tu negocio necesita orden?</div>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.55">Cuéntame cómo funciona hoy y agendamos una mesa de diagnóstico.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<a href="https://wa.me/573224842807?text=Hola%20Daniel%2C%20tengo%20una%20microempresa%20y%20me%20gustar%C3%ADa%20agendar%20una%20mesa%20de%20diagn%C3%B3stico." target="_blank" rel="noopener" style="background:#121A30;color:#F4F6FA;text-decoration:none;padding:15px 20px;border-radius:14px;font-weight:600;font-size:16px;text-align:center">Agenda una mesa de diagnóstico →</a>
+<a href="mailto:andresinfo2703@gmail.com?subject=Mesa%20de%20diagn%C3%B3stico%20para%20mi%20negocio" style="border:2px solid #121A30;color:#121A30;text-decoration:none;padding:13px 20px;border-radius:14px;font-weight:600;font-size:15px;text-align:center">Prefiero escribir un correo</a>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -280,6 +391,9 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     var c = E[enfoque];
     $('hero-eyebrow').textContent = c.eyebrow;
     $('hero-sub').textContent = c.sub;
+    var cta = $('hero-cta');
+    if (enfoque === 'micro') { cta.href = '#microempresas'; cta.textContent = 'Cómo ayudo a tu negocio →'; }
+    else { cta.href = '#desarrollos'; cta.textContent = 'Ver lo que he construido →'; }
     $('hero-chips').innerHTML = c.chips.map(function (x) { return '<span class="chip" style="font-size:14px;padding:8px 14px">' + esc(x) + '</span>'; }).join('');
   }
   $('enfoques').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { enfoque = b.getAttribute('data-k'); renderEnfoque(); } });
@@ -287,8 +401,10 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
   var mq = ['Workforce Management', 'Gestión de Proyectos', 'Planeación de personal', 'Capacity plan', 'Análisis de KPI', 'Inteligencia artificial', 'QA de desarrollos', 'Dashboards', 'Automatización', 'Liderazgo de equipos'];
   $('marquee').innerHTML = mq.concat(mq).map(function (m) { return '<span style="display:flex;gap:40px;align-items:center"><span>' + esc(m) + '</span><span style="color:#FF8F73">✦</span></span>'; }).join('');
 
-  $('stairs').innerHTML = ['Asesor', 'Mission', 'Junior', 'Coord.', 'Senior', 'Expert'].map(function (n, i) {
-    return '<div style="flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;height:100%"><div style="width:100%;border-radius:6px 6px 2px 2px;height:' + (22 + i * 14) + 'px;background:' + (i === 5 ? '#FFD25E' : 'rgba(255,210,94,' + (0.25 + i * 0.12) + ')') + '"></div><span class="mono" style="font-size:11px;color:#BAC3D3;line-height:1.2">' + n + '</span></div>';
+  var stairN = ['B. Office', 'Asesor', 'Mission', 'Junior', 'Coord.', 'Senior', 'Expert', 'Admin.', 'Actual'];
+  $('stairs').innerHTML = stairN.map(function (n, i) {
+    var cls = 'stl' + (i === 0 ? ' keep' : '') + (i === stairN.length - 1 ? ' keep last' : '');
+    return '<div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;height:100%"><div style="width:100%;border-radius:6px 6px 2px 2px;height:' + (18 + i * 11) + 'px;background:' + (i === stairN.length - 1 ? '#FFD25E' : 'rgba(255,210,94,' + (0.22 + i * 0.07) + ')') + '"></div><span class="mono ' + cls + '" style="font-size:11px;color:#BAC3D3;line-height:1.2">' + n + '</span></div>';
   }).join('');
 
   var now = [
@@ -298,7 +414,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     'Planes de negocio para abrir campañas en otros países, calculando la necesidad operativa según los parámetros del acuerdo.',
     'Trabajo en una mesa integral con análisis, desarrollo, proyectos y la dirección de la gerencia administrativa.'
   ];
-  $('now').innerHTML = now.map(function (n) { return '<div style="display:flex;gap:10px;font-size:15px;line-height:1.5;color:#D3D9E4"><span style="color:#FFD25E">→</span><span>' + esc(n) + '</span></div>'; }).join('');
+  if ($('now')) $('now').innerHTML = now.map(function (n) { return '<div style="display:flex;gap:10px;font-size:15px;line-height:1.5;color:#D3D9E4"><span style="color:#FFD25E">→</span><span>' + esc(n) + '</span></div>'; }).join('');
 
   var vmlAbout = 'Grupo empresarial aliado de Seguros Mundial, con más de 19 empresas y más de 48 años en los sectores asegurador y de transporte. Cubre asegurabilidad de vehículos, asistencia en siniestros, procesamiento de reclamaciones por accidentes, inspecciones de daños y reparaciones, y liquidación de reclamaciones hasta el pago. También realiza pruebas médicas al personal de transporte de Transmilenio y capacitaciones en normas de tránsito.';
   var R = [
@@ -346,6 +462,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 
   var D = [
     { short: 'Mapa de cobertura', title: 'Mapa de cobertura vial para la asistencia de siniestros', tags: ['Prototipo en validación', 'Geolocalización', 'IA'],
+      logro: 'A partir de la propuesta de cobertura de la aplicación se formalizaron 13 nuevas sedes —5 en Chile y 8 en Colombia— para atender siniestros que antes quedaban sin cobertura.',
       reto: 'Saber qué casos atendidos de asistencia a siniestros viales quedan realmente dentro del tiempo de llegada de cada sede, firma o abogado, y dónde conviene abrir nuevos puntos de atención para cubrir los que quedan por fuera.',
       solucion: 'Mapa interactivo que calcula la cobertura real desde cada punto de atención hacia afuera por todas las vías, con niveles de tiempo o distancia parametrizables. Cruza esas áreas con los siniestros atendidos para mostrar qué porcentaje queda dentro o fuera, y propone automáticamente dónde ubicar nuevas sedes hasta alcanzar una meta de cobertura.',
       prueba: 'Probado con 68.994 siniestros viales georreferenciados de datos abiertos (CONASET, Chile 2025), sin usar información interna de la empresa.',
@@ -372,6 +489,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         { src: 'img/mapa-4.webp', min: 'img/mapa-4-min.webp', alt: 'Ruta de 44 kilómetros en zona rural', cap: 'Cobertura en zona rural: la ruta hasta un siniestro alejado recorre 44 km en 30 minutos, fuera de las áreas de cobertura.' }
       ] },
     { short: 'Dashboards de productividad', title: 'Dashboards de productividad en tiempo real', tags: ['Dashboards', 'Tiempo real', 'Productividad'],
+      logro: 'Aumentó el cumplimiento de los ANS en los tiempos de peritaje: el equipo ahora ve en línea todos los casos y la etapa en la que se encuentra cada uno.',
       reto: 'La operación no tenía una forma ágil de medir su productividad mientras sucedía: el avance de cada etapa se conocía tarde y las decisiones se tomaban sin una vista consolidada.',
       solucion: 'Dos dashboards que mejoran la medición en tiempo real de la operación. Muestran la productividad de las diferentes partes del proceso operativo en una sola vista, para detectar a tiempo dónde se acumula el trabajo y actuar antes de que afecte los resultados.',
       funcs: [
@@ -393,6 +511,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         { src: 'img/dash-3.webp', min: 'img/dash-3-min.webp', alt: 'Detalle de casos de la fase Envío Postura', cap: 'Detalle de Envío Postura: duración de cada etapa, subestado, duración total del proceso y cumplimiento del ANS acumulado, separando los casos dentro y fuera del ANS. Datos de demostración.' }
       ] },
     { short: 'Gestión de proyectos', title: 'Aplicación para la gestión de proyectos y desarrollos', tags: ['Gestión de proyectos', 'App web', 'Carga laboral'],
+      logro: '96 proyectos gestionados en la aplicación: 66 completados con éxito y 30 en desarrollo actualmente.',
       reto: 'Las mejoras de procesos y los nuevos desarrollos avanzaban sin una vista común: no era fácil saber cuánta carga tenía cada encargado, en qué parte del proceso iba cada proyecto ni qué debía entregarse cada semana.',
       solucion: 'Aplicación a la medida para gestionar los proyectos y desarrollos de la operación. Permite hacer un mejor seguimiento a cada encargado y mejora el cumplimiento de los tiempos estimados.',
       funcs: [
@@ -416,6 +535,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         { src: 'img/proy-5.webp', min: 'img/proy-5-min.webp', alt: 'Ficha de proyecto con entregas y videos de capacitación', cap: 'Entregas del proyecto: enlaces a videos de capacitación y actas de entrega.' }
       ] },
     { short: 'Calendario académico', title: 'Calendario académico centralizado con notificaciones automáticas', tags: ['Proyecto propio', 'Automatización', 'WhatsApp'],
+      logro: 'En uso por 2 fichas de formación: cerca de 120 personas consultan desde cualquier dispositivo sus sesiones, entregas y grabaciones.',
       reto: 'No había orden en la información: próximas sesiones, entregas, grabaciones, cuestionarios y foros estaban dispersos, y era fácil perder una fecha o un enlace.',
       solucion: 'Se centralizó toda la información en un calendario que se puede consultar desde cualquier dispositivo, sin iniciar sesión, con claridad sobre cada actividad. Además, un bot conectado envía automáticamente por WhatsApp notificaciones de los eventos cercanos.',
       funcs: [
@@ -438,7 +558,12 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         { src: 'img/cal-5.webp', min: 'img/cal-5-min.webp', alt: 'Notificaciones automáticas del calendario en WhatsApp', cap: 'Notificaciones automáticas por WhatsApp: resumen de las actividades del día siguiente y aviso 2 horas antes de cada sesión. Enlaces ocultos por seguridad.' }
       ] }
   ];
-  var dev = 0, elapsed = 0, pinned = false, imgIdx = 0, lbOpen = false;
+  var dev = 0, elapsed = 0, pinned = false, imgIdx = 0, lbOpen = false, hoverPause = false;
+  var devZone = document.getElementById('desarrollos');
+  devZone.addEventListener('mouseenter', function () { hoverPause = true; });
+  devZone.addEventListener('mouseleave', function () { hoverPause = false; });
+  devZone.addEventListener('focusin', function () { hoverPause = true; });
+  devZone.addEventListener('focusout', function (e) { if (!devZone.contains(e.relatedTarget)) hoverPause = false; });
   var label = function (txt) { return '<span class="mono" style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#FFD25E">' + esc(txt) + '</span>'; };
   var para = function (lbl, txt) { return '<div style="display:flex;flex-direction:column;gap:5px">' + label(lbl) + '<span style="font-size:15px;line-height:1.6;color:#D3D9E4">' + esc(txt) + '</span></div>'; };
   var bullets = function (arr) { return '<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">' + arr.map(function (b) { return '<li style="display:flex;gap:10px;font-size:15px;line-height:1.55;color:#D3D9E4"><span style="color:#FFD25E;flex:none">✦</span><span>' + esc(b) + '</span></li>'; }).join('') + '</ul>'; };
@@ -468,7 +593,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     var d = D[dev];
     $('dev-tags').innerHTML = d.tags.map(function (g) { return '<span style="font-size:12px;font-weight:600;background:rgba(255,255,255,.1);padding:5px 12px;border-radius:999px">' + esc(g) + '</span>'; }).join('');
     $('dev-title').textContent = d.title;
-    $('dev-intro').innerHTML = para('El reto', d.reto) + para('La solución', d.solucion) + (d.prueba ? para('La prueba', d.prueba) : '');
+    $('dev-intro').innerHTML = (d.logro ? '<div style="background:rgba(255,210,94,.1);border:1px solid rgba(255,210,94,.55);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:5px">' + label('Resultado') + '<span style="font-size:16px;line-height:1.55;color:#F4F6FA;font-weight:500">' + esc(d.logro) + '</span></div>' : '') + para('El reto', d.reto) + para('La solución', d.solucion) + (d.prueba ? para('La prueba', d.prueba) : '');
     $('dev-details').innerHTML = (d.funcs ? detailCard('Funcionalidades clave', d.funcs, false) : '') + detailCard('Mi parte', d.parte, true);
     renderMedia();
     renderBar();
@@ -476,7 +601,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
   }
   function renderBar() {
     var bar = $('devbar');
-    bar.style.width = (pinned ? 100 : (elapsed / 20) * 100) + '%';
+    bar.style.width = (pinned ? 100 : (elapsed / 35) * 100) + '%';
     bar.style.background = pinned ? '#FF8F73' : '#FFD25E';
     $('devtoggle').textContent = pinned ? '▶ Reanudar' : '❚❚ Pausar';
   }
@@ -485,7 +610,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     var d = D[dev]; if (!d.images.length) return;
     var im = d.images[imgIdx];
     $('lb-img').src = im.src; $('lb-img').alt = im.alt; $('lb-cap').textContent = im.cap + '  (' + (imgIdx + 1) + ' de ' + d.images.length + ')';
-    $('lightbox').hidden = false; lbOpen = true; document.body.style.overflow = 'hidden'; $('lb-close').focus();
+    $('lightbox').hidden = false; lbOpen = true; if (typeof track === 'function') track('ampliar_imagen', { desarrollo: D[dev].short }); document.body.style.overflow = 'hidden'; $('lb-close').focus();
   }
   function closeLb() { $('lightbox').hidden = true; lbOpen = false; document.body.style.overflow = ''; }
   function stepLb(n) { var len = D[dev].images.length; imgIdx = (imgIdx + n + len) % len; renderMedia(); openLb(); }
@@ -507,9 +632,9 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) { pinned = true; }
   setInterval(function () {
-    if (pinned || lbOpen || document.hidden) return;
+    if (pinned || lbOpen || hoverPause || document.hidden) return;
     elapsed += 1;
-    if (elapsed >= 20) { dev = (dev + 1) % D.length; imgIdx = 0; elapsed = 0; renderDev(true); } else { renderBar(); }
+    if (elapsed >= 35) { dev = (dev + 1) % D.length; imgIdx = 0; elapsed = 0; renderDev(true); } else { renderBar(); }
   }, 1000);
 
   var T = [
@@ -522,6 +647,14 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     return '<div class="lift rv card" style="flex:1 1 320px;min-width:0;padding:26px"><div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><span style="width:10px;height:10px;border-radius:50%;background:' + t.c + '"></span><span class="mono" style="font-size:12px;color:#D3D9E4">' + esc(t.d) + '</span></div><div class="disp" style="font-weight:600;font-size:24px;margin-bottom:18px">' + esc(t.t) + '</div><div class="row" style="gap:8px">' + t.items.map(function (i) { return '<span class="chip">' + esc(i) + '</span>'; }).join('') + '</div></div>';
   }).join('');
 
+  var track = function (name, data) { try { window.va && window.va('event', { name: name, data: data || {} }); } catch (e) {} };
+  $('enfoques').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) track('enfoque', { valor: b.getAttribute('data-k') }); });
+  $('devtabs').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) track('desarrollo', { valor: D[+b.getAttribute('data-i')].short }); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]'); if (!a) return; var h = a.getAttribute('href');
+    var tipo = h.indexOf('wa.me') > -1 ? 'whatsapp' : h.indexOf('mailto:') === 0 ? 'correo' : h.indexOf('tel:') === 0 ? 'telefono' : h.indexOf('linkedin') > -1 ? 'linkedin' : '';
+    if (tipo) track('contacto', { canal: tipo, seccion: (a.closest('section') || {}).id || 'inicio' });
+  });
   renderEnfoque(); renderRoles(); renderDev(false);
 })();
 </script>

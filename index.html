@@ -280,7 +280,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
 <span style="font-weight:600;font-size:18px">Ventas y pedidos en línea</span>
 <span style="font-size:15px;line-height:1.55;color:#D3D9E4">Una tienda donde tus clientes piden solos, aviso por WhatsApp para empezar a producir y seguimiento de cada pedido hasta la entrega y el pago.</span>
-<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">ya lo hice · sistema Jusvie</span>
+<span class="mono" style="margin-top:auto;font-size:11px;color:#FFD25E">ya lo hice · sistema de ventas</span>
 </div>
 <div class="lift rv card" style="flex:1 1 300px;min-width:0;padding:24px;display:flex;flex-direction:column;gap:10px">
 <span style="font-weight:600;font-size:18px">Indicadores del negocio</span>
@@ -461,6 +461,42 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
   }).join('');
 
   var D = [
+    { short: 'Sistema de ventas', title: 'Sistema de ventas: pedidos, producción y análisis para un emprendimiento', tags: ['Proyecto propio', 'Ventas en línea', 'WhatsApp', 'Publicado'],
+      estado: 'Tienda y panel publicados en octubre de 2026, en etapa de lanzamiento comercial.',
+      link: { href: 'https://jusvie.pages.dev', label: 'Ver la tienda en vivo' },
+      reto: 'Jusvie, un emprendimiento de batidos naturales en Bogotá, necesitaba vender en línea sin perder el control: recibir pedidos ordenados, fabricar solo lo confirmado, cobrar sin errores y saber qué se vende, dónde y cuándo.',
+      solucion: 'Dos aplicaciones conectadas por una misma base de datos. En la tienda en línea el cliente arma su pedido, recibe un número y sigue su estado. Cada pedido nuevo envía al instante una notificación por WhatsApp para iniciar la fabricación. En un panel privado, el dueño gestiona producción, entrega y pagos, y consulta mediciones de ventas, sugerencias de mejora y zonas con demanda.',
+      funcs: [
+        'Tienda con catálogo, combos con descuento y envío según la zona de entrega.',
+        'Número de pedido y página «Sigue tu pedido», con cancelación mientras el pedido no se haya confirmado.',
+        'Notificación automática por WhatsApp de cada pedido nuevo y de cada cancelación, con el detalle y un enlace directo al pedido.',
+        'Flujo de estados con trazabilidad: por confirmar, en producción, en camino y entregado.',
+        'Registro de pagos contra entrega, Nequi o transferencia, con estado pagado, parcial o pendiente.',
+        'Zonas de entrega configurables y registro del interés de barrios sin cobertura, para decidir hacia dónde crecer.',
+        'Mediciones de ventas por día, producto, barrio y canal, con valor promedio y tiempo del pedido a la entrega.',
+        'Sugerencias de mejora calculadas con los datos, ordenadas por impacto y esfuerzo, con evidencia y opción de aprobar, programar o descartar.',
+        'Códigos de descuento para campañas, clientes nuevos o aliados, con límite de usos, vencimiento y ventas generadas por código.',
+        'Plan semanal de contenido para redes sociales, con texto listo para publicar y la métrica con la que se mide cada publicación.',
+        'Panel con ingreso solo para administradores; precios y totales calculados en el servidor para evitar alteraciones.'
+      ],
+      parte: [
+        'Levanté el modelo de negocio completo: catálogo, precios, combos, zonas de entrega, vida útil del producto y reglas de operación.',
+        'Diseñé el flujo del pedido de punta a punta, desde la compra hasta la entrega y el pago, incluyendo cancelaciones y trazabilidad.',
+        'Documenté 18 decisiones de diseño y elegí la propuesta visual de la tienda entre tres alternativas.',
+        'Construí con IA la tienda, el panel, la base de datos y la conexión con el bot de WhatsApp, sobre servicios gratuitos.',
+        'Probé el flujo completo antes de publicar: pedido, seguimiento, cancelación, pagos y avisos.'
+      ],
+      media: 'Tienda, seguimiento del pedido, panel de pedidos, análisis y notificación de WhatsApp.', images: [
+        { src: 'img/vent-1.webp', min: 'img/vent-1-min.webp', alt: 'Página de inicio de la tienda en línea con el batido Détox', cap: 'Tienda en línea: el cliente conoce cada batido, sus ingredientes y su precio, y lo agrega a su pedido.' },
+        { src: 'img/vent-2.webp', min: 'img/vent-2-min.webp', alt: 'Sección Arma tu semana con combos, cobertura por barrio y devolución de botellas', cap: '«Arma tu semana»: combos con descuento por cantidad, consulta de cobertura por barrio y descuento por devolver botellas.' },
+        { src: 'img/vent-3.webp', min: 'img/vent-3-min.webp', alt: 'Carrito del pedido con descuento por combo y código de descuento', cap: 'Carrito: el descuento por combo y el código se aplican solos; precios y totales se recalculan en el servidor.' },
+        { src: 'img/vent-4.webp', min: 'img/vent-4-min.webp', alt: 'Página Sigue tu pedido con la línea de estados', cap: '«Sigue tu pedido»: con su número, el cliente ve en qué etapa va su pedido, de la confirmación a la entrega.' },
+        { src: 'img/vent-5.webp', min: 'img/vent-5-min.webp', alt: 'Panel de pedidos con producción del día y avisos del bot de WhatsApp', cap: 'Panel de pedidos: producción del día por estado y avisos del bot de WhatsApp que llegan con cada pedido nuevo para iniciar la fabricación. Datos de demostración.' },
+        { src: 'img/vent-6.webp', min: 'img/vent-6-min.webp', alt: 'Ventas y análisis con indicadores y gráficas por día, producto, barrio y canal', cap: 'Ventas y análisis: ventas cobradas, pedidos, valor promedio, saldo por cobrar y tiempo de entrega, con ventas por día, producto, barrio y canal. Datos de demostración.' },
+        { src: 'img/vent-7.webp', min: 'img/vent-7-min.webp', alt: 'Sugerencias de mejora con prioridad, esfuerzo y evidencia', cap: 'Sugerencias de mejora: cada una con prioridad, esfuerzo, evidencia, qué hacer y cómo se mide; el dueño decide si la aprueba, la programa o la descarta. Datos de demostración.' },
+        { src: 'img/vent-8.webp', min: 'img/vent-8-min.webp', alt: 'Administración de códigos de descuento', cap: 'Códigos de descuento: creación con límite de usos y vencimiento, y lo descontado y vendido con cada código. Datos de demostración.' },
+        { src: 'img/vent-9.webp', min: 'img/vent-9-min.webp', alt: 'Plan semanal de contenido para redes sociales', cap: 'Redes y contenido: plan de la semana con la idea visual, el texto listo para copiar, el objetivo y cómo se mide cada publicación.' }
+      ] },
     { short: 'Mapa de cobertura', title: 'Mapa de cobertura vial para la asistencia de siniestros', tags: ['Prototipo en validación', 'Geolocalización', 'IA'],
       logro: 'A partir de la propuesta de cobertura de la aplicación se formalizaron 13 nuevas sedes —5 en Chile y 8 en Colombia— para atender siniestros que antes quedaban sin cobertura.',
       reto: 'Saber qué casos atendidos de asistencia a siniestros viales quedan realmente dentro del tiempo de llegada de cada sede, firma o abogado, y dónde conviene abrir nuevos puntos de atención para cubrir los que quedan por fuera.',
@@ -488,28 +524,6 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         { src: 'img/mapa-3.webp', min: 'img/mapa-3-min.webp', alt: 'Ruta por vía desde una sede propuesta hasta un siniestro', cap: 'Ruta por vía desde la sede propuesta hasta un siniestro: 3,0 km en 8 minutos en hora valle, frente a 2,7 km en línea recta.' },
         { src: 'img/mapa-4.webp', min: 'img/mapa-4-min.webp', alt: 'Ruta de 44 kilómetros en zona rural', cap: 'Cobertura en zona rural: la ruta hasta un siniestro alejado recorre 44 km en 30 minutos, fuera de las áreas de cobertura.' }
       ] },
-    { short: 'Dashboards de productividad', title: 'Dashboards de productividad en tiempo real', tags: ['Dashboards', 'Tiempo real', 'Productividad'],
-      logro: 'Aumentó el cumplimiento de los ANS en los tiempos de peritaje: el equipo ahora ve en línea todos los casos y la etapa en la que se encuentra cada uno.',
-      reto: 'La operación no tenía una forma ágil de medir su productividad mientras sucedía: el avance de cada etapa se conocía tarde y las decisiones se tomaban sin una vista consolidada.',
-      solucion: 'Dos dashboards que mejoran la medición en tiempo real de la operación. Muestran la productividad de las diferentes partes del proceso operativo en una sola vista, para detectar a tiempo dónde se acumula el trabajo y actuar antes de que afecte los resultados.',
-      funcs: [
-        'Casos por fase del proceso, separados entre dentro y fuera del ANS.',
-        'Cumplimiento del ANS por etapa y tiempo promedio en horas hábiles.',
-        'Subestados con seguimiento propio (inspección, subasta y comités) y alertas por duración.',
-        'Detalle de casos por fase con la duración de cada etapa, la duración total y el ANS acumulado.',
-        'Monitoreo en tiempo real, con tiempos calculados en días hábiles.'
-      ],
-      parte: [
-        'Levanté con la operación qué necesitaba medir cada parte del proceso y con qué frecuencia.',
-        'Diseñé los dashboards según las necesidades de la operación: indicadores, vistas y organización de la información para que cada responsable encuentre lo que necesita.',
-        'Definí los cálculos de productividad por etapa del proceso.',
-        'Construí los dos dashboards con IA y los validé con el área antes de ponerlos en uso.'
-      ],
-      media: 'Vistas de los dos dashboards.', images: [
-        { src: 'img/dash-1.webp', min: 'img/dash-1-min.webp', alt: 'Tablero gerencial del proceso de peritos con fases, cumplimiento de ANS y subestados', cap: 'Tablero gerencial del proceso de peritos: casos por fase, cumplimiento del ANS por etapa, tiempo promedio y subestados de inspección, subasta y comités. Datos de demostración.' },
-        { src: 'img/dash-2.webp', min: 'img/dash-2-min.webp', alt: 'Tablero con el detalle de casos de una fase desplegado', cap: 'Al seleccionar una fase se despliega el detalle de sus casos sin salir del tablero. Datos de demostración.' },
-        { src: 'img/dash-3.webp', min: 'img/dash-3-min.webp', alt: 'Detalle de casos de la fase Envío Postura', cap: 'Detalle de Envío Postura: duración de cada etapa, subestado, duración total del proceso y cumplimiento del ANS acumulado, separando los casos dentro y fuera del ANS. Datos de demostración.' }
-      ] },
     { short: 'Gestión de proyectos', title: 'Aplicación para la gestión de proyectos y desarrollos', tags: ['Gestión de proyectos', 'App web', 'Carga laboral'],
       logro: '96 proyectos gestionados en la aplicación: 66 completados con éxito y 30 en desarrollo actualmente.',
       reto: 'Las mejoras de procesos y los nuevos desarrollos avanzaban sin una vista común: no era fácil saber cuánta carga tenía cada encargado, en qué parte del proceso iba cada proyecto ni qué debía entregarse cada semana.',
@@ -534,6 +548,28 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         { src: 'img/proy-4.webp', min: 'img/proy-4-min.webp', alt: 'Ficha de proyecto con el tiempo en cada estado', cap: 'Tiempo que el proyecto permanece en cada estado; si vuelve a un estado anterior se abre un tramo nuevo, visible en el Gantt.' },
         { src: 'img/proy-5.webp', min: 'img/proy-5-min.webp', alt: 'Ficha de proyecto con entregas y videos de capacitación', cap: 'Entregas del proyecto: enlaces a videos de capacitación y actas de entrega.' }
       ] },
+    { short: 'Dashboards de productividad', title: 'Dashboards de productividad en tiempo real', tags: ['Dashboards', 'Tiempo real', 'Productividad'],
+      logro: 'Aumentó el cumplimiento de los ANS en los tiempos de peritaje: el equipo ahora ve en línea todos los casos y la etapa en la que se encuentra cada uno.',
+      reto: 'La operación no tenía una forma ágil de medir su productividad mientras sucedía: el avance de cada etapa se conocía tarde y las decisiones se tomaban sin una vista consolidada.',
+      solucion: 'Dos dashboards que mejoran la medición en tiempo real de la operación. Muestran la productividad de las diferentes partes del proceso operativo en una sola vista, para detectar a tiempo dónde se acumula el trabajo y actuar antes de que afecte los resultados.',
+      funcs: [
+        'Casos por fase del proceso, separados entre dentro y fuera del ANS.',
+        'Cumplimiento del ANS por etapa y tiempo promedio en horas hábiles.',
+        'Subestados con seguimiento propio (inspección, subasta y comités) y alertas por duración.',
+        'Detalle de casos por fase con la duración de cada etapa, la duración total y el ANS acumulado.',
+        'Monitoreo en tiempo real, con tiempos calculados en días hábiles.'
+      ],
+      parte: [
+        'Levanté con la operación qué necesitaba medir cada parte del proceso y con qué frecuencia.',
+        'Diseñé los dashboards según las necesidades de la operación: indicadores, vistas y organización de la información para que cada responsable encuentre lo que necesita.',
+        'Definí los cálculos de productividad por etapa del proceso.',
+        'Construí los dos dashboards con IA y los validé con el área antes de ponerlos en uso.'
+      ],
+      media: 'Vistas de los dos dashboards.', images: [
+        { src: 'img/dash-1.webp', min: 'img/dash-1-min.webp', alt: 'Tablero gerencial del proceso de peritos con fases, cumplimiento de ANS y subestados', cap: 'Tablero gerencial del proceso de peritos: casos por fase, cumplimiento del ANS por etapa, tiempo promedio y subestados de inspección, subasta y comités. Datos de demostración.' },
+        { src: 'img/dash-2.webp', min: 'img/dash-2-min.webp', alt: 'Tablero con el detalle de casos de una fase desplegado', cap: 'Al seleccionar una fase se despliega el detalle de sus casos sin salir del tablero. Datos de demostración.' },
+        { src: 'img/dash-3.webp', min: 'img/dash-3-min.webp', alt: 'Detalle de casos de la fase Envío Postura', cap: 'Detalle de Envío Postura: duración de cada etapa, subestado, duración total del proceso y cumplimiento del ANS acumulado, separando los casos dentro y fuera del ANS. Datos de demostración.' }
+      ] },
     { short: 'Calendario académico', title: 'Calendario académico centralizado con notificaciones automáticas', tags: ['Proyecto propio', 'Automatización', 'WhatsApp'],
       logro: 'En uso por 2 fichas de formación: cerca de 120 personas consultan desde cualquier dispositivo sus sesiones, entregas y grabaciones.',
       reto: 'No había orden en la información: próximas sesiones, entregas, grabaciones, cuestionarios y foros estaban dispersos, y era fácil perder una fecha o un enlace.',
@@ -556,30 +592,8 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
         { src: 'img/cal-3.webp', min: 'img/cal-3-min.webp', alt: 'Detalle de las actividades de un día', cap: 'Al tocar un día se ven todas sus actividades: grabaciones, sesiones y espacios de dudas.' },
         { src: 'img/cal-4.webp', min: 'img/cal-4-min.webp', alt: 'Detalle de una sesión con fecha, hora, instructor y botón para ingresar', cap: 'Detalle de una sesión con fecha, hora, instructor y botón para ingresar directamente. Enlace de la reunión oculto por seguridad.' },
         { src: 'img/cal-5.webp', min: 'img/cal-5-min.webp', alt: 'Notificaciones automáticas del calendario en WhatsApp', cap: 'Notificaciones automáticas por WhatsApp: resumen de las actividades del día siguiente y aviso 2 horas antes de cada sesión. Enlaces ocultos por seguridad.' }
-      ] },
-    { short: 'Sistema Jusvie', title: 'Sistema Jusvie: ventas, producción y análisis para un emprendimiento', tags: ['Proyecto propio', 'Ventas en línea', 'WhatsApp', 'Publicado'],
-      estado: 'Tienda y panel publicados en octubre de 2026, en etapa de lanzamiento comercial.',
-      link: { href: 'https://jusvie.pages.dev', label: 'Ver la tienda en vivo' },
-      reto: 'Jusvie, un emprendimiento de batidos naturales en Bogotá, necesitaba vender en línea sin perder el control: recibir pedidos ordenados, fabricar solo lo confirmado, cobrar sin errores y saber qué se vende, dónde y cuándo.',
-      solucion: 'Dos aplicaciones conectadas por una misma base de datos. En la tienda en línea el cliente arma su pedido, recibe un número y sigue su estado. Cada pedido nuevo envía al instante una notificación por WhatsApp para iniciar la fabricación. En un panel privado, el dueño gestiona producción, entrega y pagos, y consulta mediciones de ventas, sugerencias de mejora y zonas con demanda.',
-      funcs: [
-        'Tienda con catálogo, combos con descuento y envío según la zona de entrega.',
-        'Número de pedido y página «Sigue tu pedido», con cancelación mientras el pedido no se haya confirmado.',
-        'Notificación automática por WhatsApp de cada pedido nuevo y de cada cancelación, con el detalle y un enlace directo al pedido.',
-        'Flujo de estados con trazabilidad: por confirmar, en producción, en camino y entregado.',
-        'Registro de pagos contra entrega, Nequi o transferencia, con estado pagado, parcial o pendiente.',
-        'Zonas de entrega configurables y registro del interés de barrios sin cobertura, para decidir hacia dónde crecer.',
-        'Mediciones de ventas, sugerencias de mejora, seguimiento de redes sociales y origen de las visitas.',
-        'Panel con ingreso solo para administradores; precios y totales calculados en el servidor para evitar alteraciones.'
-      ],
-      parte: [
-        'Levanté el modelo de negocio completo: catálogo, precios, combos, zonas de entrega, vida útil del producto y reglas de operación.',
-        'Diseñé el flujo del pedido de punta a punta, desde la compra hasta la entrega y el pago, incluyendo cancelaciones y trazabilidad.',
-        'Documenté 18 decisiones de diseño y elegí la propuesta visual de la tienda entre tres alternativas.',
-        'Construí con IA la tienda, el panel, la base de datos y la conexión con el bot de WhatsApp, sobre servicios gratuitos.',
-        'Probé el flujo completo antes de publicar: pedido, seguimiento, cancelación, pagos y avisos.'
-      ],
-      media: 'Tienda, seguimiento del pedido, panel de pedidos, análisis y notificación de WhatsApp.', images: [] }
+      ] }
+
   ];
   var dev = 0, elapsed = 0, pinned = false, imgIdx = 0, lbOpen = false, hoverPause = false;
   var devZone = document.getElementById('desarrollos');
@@ -601,7 +615,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     var im = d.images[imgIdx];
     var main = '<button type="button" data-zoom="1" aria-label="Ampliar imagen: ' + esc(im.alt) + '" style="position:relative;display:block;width:100%;padding:0;border:1px solid rgba(255,255,255,.16);border-radius:18px;overflow:hidden;cursor:zoom-in;background:#0B0F1A;aspect-ratio:16/10"><img src="' + im.src + '" alt="' + esc(im.alt) + '" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block"><span style="position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:600;background:rgba(18,26,48,.85);color:#F4F6FA;padding:6px 10px;border-radius:999px">Ampliar ⤢</span></button>';
     var cap = '<p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#BAC3D3">' + esc(im.cap) + '</p>';
-    var thumbs = '<div style="display:grid;grid-template-columns:repeat(' + d.images.length + ',minmax(0,1fr));gap:8px">' + d.images.map(function (x, i) {
+    var thumbs = '<div style="display:grid;grid-template-columns:repeat(' + (d.images.length > 5 ? Math.ceil(d.images.length / 2) : d.images.length) + ',minmax(0,1fr));gap:8px">' + d.images.map(function (x, i) {
       var on = i === imgIdx;
       return '<button type="button" data-img="' + i + '" aria-label="Ver imagen ' + (i + 1) + '" aria-pressed="' + on + '" style="padding:0;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:16/10;background:#0B0F1A;border:2px solid ' + (on ? '#FFD25E' : 'rgba(255,255,255,.14)') + ';opacity:' + (on ? '1' : '.7') + '"><img src="' + x.min + '" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></button>';
     }).join('') + '</div>';

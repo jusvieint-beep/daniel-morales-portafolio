@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "https://daniel-morales-portafolio.pages.dev/", "permanent": false },
+    { "source": "/:path*", "destination": "https://daniel-morales-portafolio.pages.dev/:path*", "permanent": false }
+  ]
+}

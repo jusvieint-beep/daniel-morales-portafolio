@@ -380,23 +380,27 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
       chips: ['Procesos iniciales', 'Automatización', 'Apps a la medida', 'Dashboards'] }
   };
   var enfoque = 'wfm';
-  // Enlace para postulaciones: …/#workforce abre el enfoque Workforce y oculta Microempresas
+  // Enlace para postulaciones: …/#workforce abre el enfoque Workforce y oculta Microempresas.
+  // Solo aplica mientras la dirección tenga #workforce; el enlace normal muestra todo.
   var recruiter = false;
-  function checkRecruiter() {
-    var h = (location.hash || '').toLowerCase();
-    if (h === '#workforce' || h === '#wfm') { try { sessionStorage.setItem('dm-modo', 'workforce'); } catch (e) {} return true; }
-    try { return sessionStorage.getItem('dm-modo') === 'workforce'; } catch (e) { return false; }
-  }
-  function applyRecruiter() {
-    recruiter = checkRecruiter();
-    if (!recruiter) return;
-    enfoque = 'wfm';
-    document.querySelectorAll('[data-micro]').forEach(function (el) { el.hidden = true; el.style.display = 'none'; });
+  function isRecruiterHash() { var h = (location.hash || '').toLowerCase(); return h === '#workforce' || h === '#wfm'; }
+  try { sessionStorage.removeItem('dm-modo'); } catch (e) {}
+  function setRecruiter(on) {
+    recruiter = on;
+    if (on) enfoque = 'wfm';
+    document.querySelectorAll('[data-micro]').forEach(function (el) { el.hidden = on; el.style.display = on ? 'none' : ''; });
     var cl = document.getElementById('contact-lead');
-    if (cl) cl.textContent = 'Si buscas a alguien para tu equipo de Workforce o de mejora de procesos, conversemos.';
+    if (cl) cl.textContent = on ? 'Si buscas a alguien para tu equipo de Workforce o de mejora de procesos, conversemos.' : 'Si tu equipo necesita planear mejor o tu negocio necesita una herramienta que reduzca el trabajo manual, cuéntame qué está pasando.';
   }
-  applyRecruiter();
-  window.addEventListener('hashchange', function () { var was = recruiter; applyRecruiter(); if (recruiter && !was) renderEnfoque(); });
+  setRecruiter(isRecruiterHash());
+  // En modo Workforce, el menú desplaza sin cambiar la dirección, para que #workforce se conserve al recargar o compartir.
+  document.addEventListener('click', function (e) {
+    if (!recruiter) return;
+    var a = e.target.closest('a[href^="#"]'); if (!a) return;
+    var t = document.getElementById(a.getAttribute('href').slice(1)); if (!t) return;
+    e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' });
+  });
+  window.addEventListener('hashchange', function () { if (isRecruiterHash() !== recruiter) { setRecruiter(isRecruiterHash()); renderEnfoque(); } });
   function renderEnfoque() {
     var base = 'font-size:14px;font-weight:600;padding:10px 18px;min-height:44px;border-radius:999px;cursor:pointer;transition:all .2s;';
     $('enfoques').innerHTML = Object.keys(E).filter(function (k) { return !(recruiter && k === 'micro'); }).map(function (k) {

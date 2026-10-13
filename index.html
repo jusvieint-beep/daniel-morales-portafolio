@@ -52,7 +52,7 @@ button{font:inherit}
 .nav a{text-decoration:none;color:#F4F6FA;padding:10px 14px;border-radius:999px}
 .nav a:hover{background:rgba(255,255,255,.08);color:#F4F6FA}
 button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2px}
-#lightbox[hidden]{display:none !important}
+#lightbox[hidden],[data-micro][hidden]{display:none !important}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .stl{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media (max-width:560px){.stl{visibility:hidden}.stl.keep{visibility:visible;overflow:visible}.stl.last{display:flex;justify-content:flex-end;color:#FFD25E !important}}
@@ -81,7 +81,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <a href="#trayectoria">Trayectoria</a>
 <a href="#desarrollos">Desarrollos</a>
 <a href="#conocimientos">Conocimientos</a>
-<a href="#microempresas" data-micro>Microempresas</a>
+<a href="#para-negocios" data-micro hidden>Microempresas</a>
 <a href="#contacto" style="color:#121A30;background:#F4F6FA;font-weight:600;padding:10px 16px">Hablemos</a>
 </nav>
 </header>
@@ -250,7 +250,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 </div>
 </section>
 
-<section id="microempresas" data-micro style="background:#18213B;border-top:1px solid rgba(255,255,255,.12);padding:110px 20px">
+<section id="para-negocios" data-micro hidden style="background:#18213B;border-top:1px solid rgba(255,255,255,.12);padding:110px 20px">
 <div class="wrap">
 <div class="kicker rv" style="color:#FFD25E">✦ Para microempresas</div>
 <h2 class="h2 rv" style="margin-bottom:18px">Tu operación, organizada en una herramienta <span style="color:#FFD25E">hecha a tu medida.</span></h2>
@@ -343,7 +343,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
 <div class="wrap" style="position:relative">
 <div class="mono" style="font-size:13px;color:#A8341A;margin-bottom:16px">✦ Contacto</div>
 <h2 class="disp" style="font-weight:800;font-size:clamp(52px,10vw,140px);letter-spacing:-0.045em;line-height:.9;margin:0 0 28px">¿Hablamos?</h2>
-<p id="contact-lead" style="font-size:20px;line-height:1.5;max-width:640px;margin:0 0 36px;color:#3A4157">Si tu equipo necesita planear mejor o tu negocio necesita una herramienta que reduzca el trabajo manual, cuéntame qué está pasando.</p>
+<p id="contact-lead" style="font-size:20px;line-height:1.5;max-width:640px;margin:0 0 36px;color:#3A4157">Si tu equipo necesita planear mejor, mejorar sus procesos o una herramienta que reduzca el trabajo manual, conversemos.</p>
 <div class="row" style="gap:14px;margin-bottom:32px">
 <a href="mailto:andresinfo2703@gmail.com" style="flex:1 1 260px;display:flex;flex-direction:column;gap:4px;background:#FFFFFF;border-radius:18px;padding:20px 22px;text-decoration:none;color:#121A30;box-shadow:0 16px 36px -24px rgba(18,26,48,.4)">
 <span class="mono" style="font-size:12px;color:#A8341A">correo</span>
@@ -380,30 +380,31 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
       chips: ['Procesos iniciales', 'Automatización', 'Apps a la medida', 'Dashboards'] }
   };
   var enfoque = 'wfm';
-  // Enlace para postulaciones: …/#workforce abre el enfoque Workforce y oculta Microempresas.
-  // Solo aplica mientras la dirección tenga #workforce; el enlace normal muestra todo.
-  var recruiter = false;
-  function isRecruiterHash() { var h = (location.hash || '').toLowerCase(); return h === '#workforce' || h === '#wfm'; }
-  try { sessionStorage.removeItem('dm-modo'); } catch (e) {}
-  function setRecruiter(on) {
-    recruiter = on;
-    if (on) enfoque = 'wfm';
-    document.querySelectorAll('[data-micro]').forEach(function (el) { el.hidden = on; el.style.display = on ? 'none' : ''; });
+  // La sección Microempresas solo se muestra con el enlace …/#microempresas, que además abre ese enfoque.
+  // Cualquier otro enlace la oculta.
+  var microMode = false;
+  var LEAD_DEF = 'Si tu equipo necesita planear mejor, mejorar sus procesos o una herramienta que reduzca el trabajo manual, conversemos.';
+  var LEAD_MICRO = 'Si tu negocio necesita una herramienta que reduzca el trabajo manual, cuéntame cómo funciona hoy y lo revisamos juntos.';
+  function isMicroHash() { var h = (location.hash || '').toLowerCase(); return h === '#microempresas' || h === '#micro'; }
+  function setMicro(on) {
+    microMode = on;
+    enfoque = on ? 'micro' : (enfoque === 'micro' ? 'wfm' : enfoque);
+    document.querySelectorAll('[data-micro]').forEach(function (el) { el.hidden = !on; });
     var cl = document.getElementById('contact-lead');
-    if (cl) cl.textContent = on ? 'Si buscas a alguien para tu equipo de Workforce o de mejora de procesos, conversemos.' : 'Si tu equipo necesita planear mejor o tu negocio necesita una herramienta que reduzca el trabajo manual, cuéntame qué está pasando.';
+    if (cl) cl.textContent = on ? LEAD_MICRO : LEAD_DEF;
   }
-  setRecruiter(isRecruiterHash());
-  // En modo Workforce, el menú desplaza sin cambiar la dirección, para que #workforce se conserve al recargar o compartir.
+  setMicro(isMicroHash());
+  // En modo Microempresas, el menú desplaza sin cambiar la dirección, para que #microempresas se conserve al recargar o compartir.
   document.addEventListener('click', function (e) {
-    if (!recruiter) return;
+    if (!microMode) return;
     var a = e.target.closest('a[href^="#"]'); if (!a) return;
     var t = document.getElementById(a.getAttribute('href').slice(1)); if (!t) return;
     e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' });
   });
-  window.addEventListener('hashchange', function () { if (isRecruiterHash() !== recruiter) { setRecruiter(isRecruiterHash()); renderEnfoque(); } });
+  window.addEventListener('hashchange', function () { if (isMicroHash() !== microMode) { setMicro(isMicroHash()); renderEnfoque(); } });
   function renderEnfoque() {
     var base = 'font-size:14px;font-weight:600;padding:10px 18px;min-height:44px;border-radius:999px;cursor:pointer;transition:all .2s;';
-    $('enfoques').innerHTML = Object.keys(E).filter(function (k) { return !(recruiter && k === 'micro'); }).map(function (k) {
+    $('enfoques').innerHTML = Object.keys(E).filter(function (k) { return microMode || k !== 'micro'; }).map(function (k) {
       var on = k === enfoque;
       return '<button type="button" data-k="' + k + '" aria-pressed="' + on + '" style="' + base + (on ? 'background:#F4F6FA;color:#121A30;border:1px solid #F4F6FA' : 'background:rgba(255,255,255,.06);color:#F4F6FA;border:1px solid rgba(255,255,255,.3)') + '">' + esc(E[k].label) + '</button>';
     }).join('');
@@ -411,7 +412,7 @@ button:focus-visible,a:focus-visible{outline:3px solid #FFD25E;outline-offset:2p
     $('hero-eyebrow').textContent = c.eyebrow;
     $('hero-sub').textContent = c.sub;
     var cta = $('hero-cta');
-    if (enfoque === 'micro') { cta.href = '#microempresas'; cta.textContent = 'Cómo ayudo a tu negocio →'; }
+    if (enfoque === 'micro') { cta.href = '#para-negocios'; cta.textContent = 'Cómo ayudo a tu negocio →'; }
     else { cta.href = '#desarrollos'; cta.textContent = 'Ver lo que he construido →'; }
     $('hero-chips').innerHTML = c.chips.map(function (x) { return '<span class="chip" style="font-size:14px;padding:8px 14px">' + esc(x) + '</span>'; }).join('');
   }

@@ -375,7 +375,7 @@ footer a{color:var(--fg-2)}
     <div class="detail" role="tabpanel" id="step-detail" aria-live="polite"></div>
     <div class="sessions">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
-      <span><b style="color:var(--fg)">Sesiones.</b> Hasta la entrega final, todas las sesiones son sin costo: la mesa técnica, la entrega del demo, la entrega final y cualquier otra sesión que no sea un requerimiento nuevo o un ajuste. Después de la entrega final, cada sesión cuesta el 5 % del valor del paquete.</span>
+      <span><b style="color:var(--fg)">Sesiones.</b> Hasta la entrega final, todas las sesiones son sin costo: la mesa técnica, la entrega del demo, la entrega final y cualquier otra sesión que no sea un requerimiento nuevo o un ajuste. Después de la entrega final, cada sesión cuesta el 2 % del valor del paquete.</span>
     </div>
   </div>
 </section>
@@ -410,7 +410,7 @@ footer a{color:var(--fg-2)}
           <div class="r"><span class="w"><i class="sw" style="background:var(--sun);opacity:.7"></i>30 % al recibir el demo</span><b id="s-p2">$ 150.000</b></div>
           <div class="r"><span class="w"><i class="sw" style="background:var(--sun)"></i>50 % en la entrega final</span><b id="s-p3">$ 250.000</b></div>
           <div class="r"><span>Garantía y acompañamiento mensual</span><b>Primer año incluido</b></div>
-          <div class="r"><span>Sesión después de la entrega</span><b id="s-ses">$ 25.000</b></div>
+          <div class="r"><span>Sesión después de la entrega</span><b id="s-ses">$ 10.000</b></div>
           <div class="r" id="s-dom-row" hidden><span>Dominio propio (lo pagas al proveedor)</span><b>≈ US$ 10 – 30 al año</b></div>
         </div>
         <div class="sendbox">
@@ -441,7 +441,7 @@ footer a{color:var(--fg-2)}
           <tr><td>Correo con tu dominio <span class="small">(opcional)</span></td><td>Cuentas como ventas@tunegocio.com. Hay planes gratuitos y de pago según cuántas cuentas necesites.</td><td class="amt">Según proveedor</td><td><span class="who you">Tu empresa, al proveedor</span></td></tr>
           <tr><td>Pagos con tarjeta o PSE <span class="small">(opcional)</span></td><td>Si quieres cobrar en línea, la pasarela de pagos cobra una comisión por cada venta. La elegimos juntos en la mesa técnica.</td><td class="amt">Comisión por venta</td><td><span class="who you">Tu empresa, a la pasarela</span></td></tr>
           <tr><td>Mensualidad</td><td>Durante el primer año, el de la garantía, el acompañamiento mensual está incluido en el valor del desarrollo.</td><td class="amt">$ 0</td><td><span class="who zero">Incluido</span></td></tr>
-          <tr><td>Después de la entrega</td><td>Funciones nuevas o ajustes que pidas después de la entrega final se cotizan según lo solicitado. Las sesiones cuestan el 5 % del valor del paquete.</td><td class="amt">Según lo pedido</td><td><span class="who me">Se cotiza antes</span></td></tr>
+          <tr><td>Después de la entrega</td><td>Funciones nuevas o ajustes que pidas después de la entrega final se cotizan según lo solicitado. Las sesiones cuestan el 2 % del valor del paquete.</td><td class="amt">Según lo pedido</td><td><span class="who me">Se cotiza antes</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -458,7 +458,7 @@ footer a{color:var(--fg-2)}
       <div class="cnd"><span class="big" style="color:var(--coral)">1 año</span><p>de garantía después de la entrega final: corrijo sin costo cualquier error de lo entregado.</p></div>
       <div class="cnd"><span class="big" style="color:var(--violet)">$ 0 al mes</span><p>El acompañamiento mensual va incluido durante el primer año, el mismo de la garantía.</p></div>
       <div class="cnd"><span class="big">20 · 30 · 50</span><p>Pagas 20 % para iniciar, 30 % al recibir el acceso al demo y 50 % cuando la recibes completa y funcional.</p></div>
-      <div class="cnd"><span class="big">Gratis</span><p>la mesa técnica y las sesiones hasta la entrega final. Después, cada sesión cuesta el 5 % del paquete.</p></div>
+      <div class="cnd"><span class="big">Gratis</span><p>la mesa técnica y las sesiones hasta la entrega final. Después, cada sesión cuesta el 2 % del paquete.</p></div>
       <div class="cnd"><span class="big">Bre-B · Nequi</span><p>o efectivo. Precios finales, sin valores adicionales sobre el desarrollo.</p></div>
     </div>
     <div class="owner">
@@ -718,7 +718,7 @@ footer a{color:var(--fg-2)}
     $('s-pk').textContent = 'Paquete ' + p.name + (p.desde ? ' · desde' : '');
     countTo(p.price);
     $('s-p1').textContent = fmt(p.price * 0.2); $('s-p2').textContent = fmt(p.price * 0.3); $('s-p3').textContent = fmt(p.price * 0.5);
-    $('s-ses').textContent = fmt(p.price * 0.05);
+    $('s-ses').textContent = fmt(p.price * 0.02);
     $('s-dom-row').hidden = !$('f-dominio').checked;
     var more = FEATS.filter(function (f) { return f.tier === pk + 1; }).slice(0, 3).map(function (f) { return f.t.toLowerCase(); });
     $('feats-note').textContent = 'Ves las funciones que aplican al paquete ' + p.name + '.' +

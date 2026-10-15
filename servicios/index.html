@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Daniel Morales · Servicios</title>
+<meta name="description" content="Páginas web, tiendas en línea y aplicaciones a la medida para microempresas. Mesa técnica gratis, 3 rondas de ajustes y 1 año de garantía.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;600&display=swap">
+<meta name="theme-color" content="#121A30">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daniel Morales · Servicios para microempresas">
+<meta property="og:description" content="Páginas web, tiendas en línea y apps a la medida. Mesa técnica gratis, 3 rondas de ajustes y 1 año de garantía.">
+<meta property="og:locale" content="es_CO">
+<meta property="og:url" content="https://daniel-morales-servicios.pages.dev/">
+<meta property="og:image" content="https://daniel-morales-servicios.pages.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://daniel-morales-servicios.pages.dev/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23121A30'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='26' text-anchor='middle' fill='%23F4F6FA'%3ED%3Ctspan fill='%23FFD25E'%3EM%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<style>[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<style>
+/* Layout: banda oscura continua; héroe con la "ficha de proyecto" viva, luego paquetes → proceso → cotizador → costos → condiciones → preguntas. Misma identidad del portafolio. */
+:root{
+  color-scheme:dark;
+  --bg:#121A30; --bg-2:#18213B; --card:#1E2847; --card-2:#243055;
+  --line:rgba(255,255,255,.14); --line-2:rgba(255,255,255,.26);
+  --fg:#F4F6FA; --fg-2:#D3D9E4; --fg-3:#BAC3D3;
+  --sun:#FFD25E; --coral:#FF8F73; --violet:#B3A6FF; --ink:#121A30; --cream:#FFF3EA;
+  --ok:#7FE0A8;
+  --display:"Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.025em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--sun)}
+.lead{font-size:18px;color:var(--fg-2);max-width:62ch}
+.h2{font-size:clamp(32px,4.6vw,52px);line-height:1.04;font-weight:800}
+section{padding-block:96px}
+.band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:14px;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;border:1px solid transparent;font-family:var(--body);transition:transform .15s ease, background .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--line-2)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--fg-2);white-space:nowrap}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(18,26,48,.86);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;min-width:0}
+.logo{width:38px;height:38px;border-radius:11px;background:var(--card);border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:-.04em;flex:none}
+.logo b{color:var(--sun);font-weight:800}
+.brand span{font-weight:600;font-size:15px;line-height:1.15}
+.brand small{display:block;font-family:var(--mono);font-size:11px;color:var(--fg-3);font-weight:400}
+nav.links{display:flex;gap:4px}
+nav.links a{text-decoration:none;font-size:14px;color:var(--fg-2);padding:8px 12px;border-radius:999px}
+nav.links a:hover{background:rgba(255,255,255,.07);color:var(--fg)}
+@media (max-width:900px){nav.links{display:none}}
+@media (max-width:420px){.brand small{display:none} header.top .btn{padding:10px 14px;font-size:14px}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding-block:72px 88px}
+.glow{position:absolute;border-radius:50%;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center}
+@media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+.hero h1{font-size:clamp(40px,6.4vw,76px);line-height:1;font-weight:800;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 28px}
+.trust{display:flex;flex-wrap:wrap;gap:8px}
+.trust .chip svg{color:var(--ok)}
+
+/* Ficha de proyecto (héroe) */
+.ticket{background:linear-gradient(180deg,var(--card),#1A2340);border:1px solid var(--line-2);border-radius:24px;padding:22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);min-width:0}
+.ticket-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.status{font-family:var(--mono);font-size:11px;padding:5px 10px;border-radius:999px;background:rgba(255,210,94,.14);color:var(--sun);border:1px solid rgba(255,210,94,.45)}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.tl li{display:flex;align-items:center;gap:12px;padding:7px 8px;border-radius:10px;font-size:14px;color:var(--fg-3);transition:background .3s ease,color .3s ease}
+.tl .dot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line-2);display:grid;place-items:center;flex:none;transition:all .3s ease}
+.tl .dot svg{opacity:0;transition:opacity .3s ease}
+.tl li.done{color:var(--fg-2)}
+.tl li.done .dot{background:var(--ok);border-color:var(--ok);color:var(--ink)}
+.tl li.done .dot svg{opacity:1}
+.tl li.now{background:rgba(255,210,94,.1);color:var(--fg)}
+.tl li.now .dot{border-color:var(--sun);box-shadow:0 0 0 4px rgba(255,210,94,.18)}
+.tl .pay{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--fg-3)}
+.tl li.done .pay{color:var(--ok)}
+.paybar{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line-2)}
+.paybar .lbl{display:flex;justify-content:space-between;font-size:13px;color:var(--fg-3);margin-bottom:8px;gap:8px}
+.paybar .lbl b{color:var(--fg);font-variant-numeric:tabular-nums}
+.segs{display:grid;grid-template-columns:20fr 30fr 50fr;gap:4px}
+.segs span{height:10px;border-radius:6px;background:rgba(255,255,255,.1);position:relative;overflow:hidden}
+.segs span::after{content:"";position:absolute;inset:0;background:var(--sun);transform:scaleX(0);transform-origin:left;transition:transform .6s ease}
+.segs span.on::after{transform:scaleX(1)}
+.segs-lbl{display:grid;grid-template-columns:20fr 30fr 50fr;gap:4px;margin-top:6px;font-family:var(--mono);font-size:10.5px;color:var(--fg-3)}
+
+/* Paquetes */
+.pk-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:1040px){.pk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.pk-grid{grid-template-columns:minmax(0,1fr)}}
+.pk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px;min-width:0;position:relative}
+.pk.pk-star{border-color:rgba(255,210,94,.6);background:linear-gradient(180deg,#26315A,var(--card))}
+.pk .tag{position:absolute;top:-11px;left:22px;background:var(--sun);color:var(--ink);font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;font-family:var(--mono)}
+.pk .kind{font-family:var(--mono);font-size:11.5px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.06em}
+.pk h3{font-size:26px;font-weight:800}
+.price{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.price small{display:block;font-family:var(--mono);font-size:11px;font-weight:400;color:var(--fg-3);letter-spacing:0;margin-bottom:6px}
+.pk .for{font-size:14.5px;color:var(--fg-2)}
+.pk ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14.5px;color:var(--fg-2)}
+.pk li{display:flex;gap:9px}
+.pk li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--sun);margin-top:9px;flex:none}
+.pk .meta{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--fg-3)}
+.pk .meta b{color:var(--fg);font-weight:600}
+.pk .pick{margin-top:4px}
+.note{margin-top:18px;font-size:14px;color:var(--fg-3)}
+
+/* Explicación de paquetes */
+.explain{margin-top:56px;scroll-margin-top:90px}
+.explain h3.t{font-size:clamp(24px,3vw,32px);font-weight:800}
+.ex-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ex-tab{font:inherit;font-size:14.5px;font-weight:600;color:var(--fg-2);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:10px 18px;min-height:44px;cursor:pointer;transition:all .15s ease}
+.ex-tab:hover{color:var(--fg);border-color:var(--fg-3)}
+.ex-tab[aria-selected="true"]{background:var(--fg);color:var(--ink);border-color:var(--fg)}
+.ex-panel{margin-top:16px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px}
+@media (max-width:760px){.ex-panel{grid-template-columns:minmax(0,1fr);padding:22px}}
+.ex-panel .lead-in{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.6vw,30px);line-height:1.1;letter-spacing:-.02em}
+.ex-panel .body{color:var(--fg-2);font-size:16px;margin-top:12px;max-width:62ch}
+.ex-panel ul.how{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;color:var(--fg-2);font-size:15.5px}
+.ex-panel ul.how li{display:flex;gap:10px}
+.ex-panel ul.how li::before{content:"✦";color:var(--sun);flex:none}
+.ex-side{display:flex;flex-direction:column;gap:16px}
+.ex-side .k{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--sun)}
+.ex-side .goal{font-size:17px;font-weight:600;color:var(--fg)}
+.ex-side .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ex-side .no{font-size:14.5px;color:var(--fg-2);background:rgba(255,143,115,.08);border:1px solid rgba(255,143,115,.35);border-radius:14px;padding:12px 14px}
+.ex-side .no b{color:var(--coral)}
+.ex-side a.ex-link{font-weight:600;font-size:14.5px;color:var(--sun);text-decoration:none}
+.pk .lim{display:flex;flex-direction:column;gap:6px;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px dashed var(--line-2)}
+.pk .lim .k{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--fg-3)}
+.pk .lim div{display:flex;flex-wrap:wrap;gap:6px}
+.pk .lim span.c{font-size:12.5px;font-weight:600;color:var(--fg);background:rgba(255,210,94,.12);border-radius:8px;padding:3px 8px}
+.ex-side .lims{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ex-side .lims span{font-size:13px;font-weight:600;color:var(--fg);background:rgba(255,210,94,.12);border-radius:8px;padding:4px 9px}
+.pk .what{font:inherit;font-size:13.5px;color:var(--fg-3);background:none;border:0;padding:0;cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.pk .what:hover{color:var(--fg)}
+
+/* Proceso */
+.steps{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:40px;position:relative}
+.steps::before{content:"";position:absolute;left:4%;right:4%;top:27px;height:2px;background:linear-gradient(90deg,var(--sun),var(--coral),var(--violet));opacity:.35}
+@media (max-width:760px){.steps{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:14px}.steps::before{display:none}}
+.step{position:relative;background:none;border:0;padding:0;color:var(--fg-3);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--body);font-size:13px;line-height:1.25;text-align:center}
+.step .n{width:54px;height:54px;border-radius:16px;background:var(--card);border:1px solid var(--line-2);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px;color:var(--fg);transition:all .2s ease}
+.step:hover .n{border-color:var(--fg-3)}
+.step[aria-selected="true"]{color:var(--fg)}
+.step[aria-selected="true"] .n{background:var(--sun);color:var(--ink);border-color:var(--sun);box-shadow:0 0 0 6px rgba(255,210,94,.16)}
+.step .pdot{position:absolute;top:-4px;right:calc(50% - 32px);width:12px;height:12px;border-radius:50%;background:var(--coral);border:2px solid var(--bg-2)}
+.detail{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:28px}
+@media (max-width:760px){.detail{grid-template-columns:minmax(0,1fr);padding:22px}}
+.detail h3{font-size:clamp(26px,3vw,36px);font-weight:800;line-height:1.05}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;align-self:flex-start}
+.badge.pay{background:rgba(255,143,115,.16);color:var(--coral);border:1px solid rgba(255,143,115,.5)}
+.badge.free{background:rgba(127,224,168,.12);color:var(--ok);border:1px solid rgba(127,224,168,.45)}
+.badge.info{background:rgba(179,166,255,.14);color:var(--violet);border:1px solid rgba(179,166,255,.45)}
+.kv{display:flex;flex-direction:column;gap:16px}
+.kv div{display:flex;flex-direction:column;gap:4px}
+.kv dt,.kv .k{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--sun)}
+.kv .v{color:var(--fg-2);font-size:15.5px}
+.step-nav{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
+.sessions{margin-top:18px;display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--fg-2);background:rgba(179,166,255,.08);border:1px solid rgba(179,166,255,.3);border-radius:16px;padding:16px 18px}
+.sessions svg{color:var(--violet);flex:none;margin-top:2px}
+
+/* Cotizador */
+.quote{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:20px;margin-top:40px;align-items:start}
+@media (max-width:900px){.quote{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px;min-width:0}
+.panel h3{font-size:20px;font-weight:600;letter-spacing:-.01em;margin-bottom:14px}
+.pkopts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:26px}
+@media (max-width:460px){.pkopts{grid-template-columns:minmax(0,1fr)}}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt label{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:14px;border:1px solid var(--line-2);cursor:pointer;transition:all .15s ease;min-height:72px}
+.opt label b{font-size:15px}
+.opt label span{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);font-variant-numeric:tabular-nums}
+.opt input:checked + label{border-color:var(--sun);background:rgba(255,210,94,.1)}
+.opt input:checked + label span{color:var(--sun)}
+.opt input:focus-visible + label{outline:3px solid var(--sun);outline-offset:2px}
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@media (max-width:460px){.feats{grid-template-columns:minmax(0,1fr)}}
+.feat{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);cursor:pointer;font-size:14.5px;color:var(--fg-2);transition:all .15s ease}
+.feat:hover{border-color:var(--line-2)}
+.feat[hidden]{display:none}
+.feat input{width:18px;height:18px;accent-color:var(--sun);flex:none}
+.feat:has(input:checked){border-color:rgba(255,210,94,.55);color:var(--fg);background:rgba(255,210,94,.06)}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:22px}
+@media (max-width:460px){.fields{grid-template-columns:minmax(0,1fr)}}
+.fields label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--fg-3)}
+.fields input{font:inherit;font-size:15px;color:var(--fg);background:var(--bg);border:1px solid var(--line-2);border-radius:12px;padding:12px 14px;min-height:46px}
+.fields input:focus{border-color:var(--sun);outline:none}
+.hint{display:none;margin-top:16px;gap:12px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--fg);background:rgba(255,143,115,.1);border:1px solid rgba(255,143,115,.45);border-radius:14px;padding:12px 14px}
+.hint.show{display:flex}
+.hint button{font:inherit;font-size:13.5px;font-weight:600;background:var(--coral);color:#1A0E09;border:0;border-radius:10px;padding:8px 12px;cursor:pointer}
+.summary{position:sticky;top:calc(84px + env(safe-area-inset-top,0px));background:linear-gradient(180deg,#26315A,var(--card));border-color:rgba(255,210,94,.45)}
+@media (max-width:900px){.summary{position:static}}
+.total{font-family:var(--display);font-weight:800;font-size:clamp(40px,5vw,54px);letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums;margin:6px 0 4px}
+.sumrows{display:flex;flex-direction:column;margin-top:20px;border-top:1px solid var(--line)}
+.sumrows .r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--fg-2)}
+.sumrows .r b{color:var(--fg);font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
+.sumrows .r .w{display:flex;align-items:center;gap:10px}
+.sumrows .sw{width:10px;height:10px;border-radius:3px;flex:none}
+.sendbox{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+.sendbox .btn{width:100%}
+.small{font-size:13px;color:var(--fg-3)}
+.copyrow{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13.5px;color:var(--fg-3)}
+.copyrow button{font:inherit;font-size:12.5px;color:var(--fg);background:transparent;border:1px solid var(--line-2);border-radius:9px;padding:6px 10px;cursor:pointer}
+
+/* Costos */
+.costs{margin-top:40px;overflow-x:auto;border:1px solid var(--line);border-radius:20px}
+.costs table{width:100%;border-collapse:collapse;min-width:640px;font-size:15px}
+.costs th,.costs td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.costs th{font-family:var(--mono);font-size:11.5px;font-weight:400;text-transform:uppercase;letter-spacing:.06em;color:var(--fg-3);background:rgba(255,255,255,.03)}
+.costs tr:last-child td{border-bottom:0}
+.costs td:first-child{font-weight:600;color:var(--fg);width:24%}
+.costs td{color:var(--fg-2)}
+.costs .amt{font-family:var(--mono);font-size:14px;color:var(--fg);white-space:nowrap;font-variant-numeric:tabular-nums}
+@media (max-width:640px){
+  .costs{overflow:visible;border:0;border-radius:0}
+  .costs table,.costs tbody,.costs tr,.costs td{display:block;min-width:0;width:auto}
+  .costs thead{display:none}
+  .costs tr{border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:10px;background:var(--card)}
+  .costs td{border:0;padding:3px 0}
+  .costs td:first-child{width:auto;font-size:16.5px;padding-bottom:6px}
+  .costs .amt{padding-top:8px}
+}
+.who{font-size:12.5px;font-family:var(--mono);padding:3px 9px;border-radius:999px;white-space:nowrap}
+.who.me{background:rgba(255,210,94,.14);color:var(--sun)}
+.who.you{background:rgba(179,166,255,.14);color:var(--violet)}
+.who.zero{background:rgba(127,224,168,.12);color:var(--ok)}
+
+/* Condiciones */
+.cond{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:900px){.cond{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cond{grid-template-columns:minmax(0,1fr)}}
+.cnd{padding:22px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:8px;min-width:0}
+.cnd .big{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.03em;line-height:1.05}
+.cnd p{font-size:14.5px;color:var(--fg-2)}
+.owner{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;background:var(--cream);color:var(--ink);border-radius:24px;padding:28px}
+.owner h3{font-size:clamp(24px,3vw,32px);font-weight:800}
+.owner p{color:#3A4157;font-size:16px;margin-top:8px;max-width:62ch}
+.owner .ico{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.owner .ico span{font-family:var(--mono);font-size:12.5px;padding:7px 11px;border-radius:999px;background:var(--ink);color:var(--cream)}
+@media (max-width:760px){.owner{grid-template-columns:minmax(0,1fr)}.owner .ico{justify-content:flex-start}}
+
+/* Prueba */
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:40px}
+@media (max-width:900px){.proof{grid-template-columns:minmax(0,1fr)}}
+.pr{padding:24px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;gap:10px;min-width:0}
+.pr .num{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:-.04em;line-height:1}
+.pr h3{font-size:19px;font-weight:600;letter-spacing:-.01em}
+.pr p{font-size:14.5px;color:var(--fg-2)}
+.pr a{margin-top:auto;font-weight:600;font-size:14.5px;color:var(--sun);text-decoration:none}
+
+/* FAQ */
+.faq{margin-top:36px;display:flex;flex-direction:column;gap:10px;max-width:860px}
+.faq details{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:0 20px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:16.5px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:20px;color:var(--sun);flex:none;transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:18px;color:var(--fg-2);font-size:15.5px;max-width:70ch}
+
+/* Final */
+.final{background:var(--sun);color:var(--ink);border-radius:28px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end}
+.final h2{font-size:clamp(34px,5vw,60px);font-weight:800;line-height:1}
+.final p{font-size:17px;margin-top:14px;max-width:52ch;color:#2A3150}
+.final .btn-ink{background:var(--ink);color:var(--fg)}
+.final .btn-line{border-color:var(--ink);color:var(--ink)}
+@media (max-width:760px){.final{grid-template-columns:minmax(0,1fr)}}
+footer{padding-block:40px 56px;color:var(--fg-3);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer a{color:var(--fg-2)}
+.reveal{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Inicio">
+      <span class="logo" aria-hidden="true">D<b>M</b></span>
+      <span>Daniel Andres Morales<small>servicios para microempresas</small></span>
+    </a>
+    <nav class="links" aria-label="Secciones">
+      <a href="#paquetes">Paquetes</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#cotizador">Cotizador</a>
+      <a href="#costos">Costos</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn btn-sun" id="cta-top" href="#cotizador">Agendar mesa técnica</a>
+  </div>
+</header>
+
+<main id="inicio">
+<!-- HÉROE -->
+<section class="hero">
+  <div class="glow" aria-hidden="true" style="width:620px;height:620px;right:-180px;top:-260px;background:radial-gradient(circle,rgba(179,166,255,.32),rgba(179,166,255,0) 68%)"></div>
+  <div class="glow" aria-hidden="true" style="width:520px;height:520px;left:-220px;bottom:-300px;background:radial-gradient(circle,rgba(255,210,94,.22),rgba(255,210,94,0) 68%)"></div>
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <span class="eyebrow">✦ Servicios para microempresas</span>
+      <h1>Tu negocio, organizado en una herramienta <em>hecha a tu medida.</em></h1>
+      <p class="lead">Páginas web, tiendas en línea y aplicaciones de gestión para negocios pequeños. Empezamos con una mesa técnica gratis, y el primer pago llega solo cuando apruebas el proyecto.</p>
+      <div class="cta">
+        <a class="btn btn-sun" id="cta-hero" href="#cotizador">Cotiza en un minuto →</a>
+        <a class="btn btn-ghost" href="#proceso">Ver cómo trabajamos</a>
+      </div>
+      <div class="trust" aria-label="Condiciones principales">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Mesa técnica gratis</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>3 rondas de ajustes</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>1 año de garantía</span>
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Todo a nombre de tu empresa</span>
+      </div>
+    </div>
+
+    <div class="ticket reveal" aria-label="Ejemplo del avance de un proyecto">
+      <div class="ticket-head">
+        <span class="mono" style="font-size:12px;color:var(--fg-3)">EJEMPLO · TIENDA EN LÍNEA</span>
+        <span class="status" id="tk-status">Entrega del demo</span>
+      </div>
+      <ol class="tl" id="tk-list"></ol>
+      <div class="paybar">
+        <div class="lbl"><span>Pagado del proyecto</span><b id="tk-paid">$ 250.000 de $ 500.000</b></div>
+        <div class="segs" aria-hidden="true"><span id="sg1"></span><span id="sg2"></span><span id="sg3"></span></div>
+        <div class="segs-lbl" aria-hidden="true"><span>20 % inicio</span><span>30 % demo</span><span>50 % entrega final</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAQUETES -->
+<section id="paquetes" class="band">
+  <div class="wrap">
+    <span class="eyebrow">Paquetes</span>
+    <h2 class="h2" style="margin-top:12px">Elige por dónde empezar.</h2>
+    <p class="lead" style="margin-top:14px">Cuatro puntos de partida según lo que necesita tu negocio hoy. En la mesa técnica confirmamos juntos cuál te sirve y lo dejamos por escrito.</p>
+    <div class="pk-grid" id="pk-grid"></div>
+    <p class="note">Lo que supere los límites de cada paquete se cotiza como adicional en la mesa técnica y queda escrito en el documento del proyecto. Precios finales en pesos colombianos: no se suma ningún valor adicional al desarrollo. Los costos de terceros, como un dominio propio, se explican en <a href="#costos">Costos</a>.</p>
+    <div class="explain" id="que-es">
+      <h3 class="t">¿Qué significa cada paquete?</h3>
+      <div class="ex-tabs" role="tablist" aria-label="Paquetes" id="ex-tabs"></div>
+      <div class="ex-panel" role="tabpanel" id="ex-panel" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="wrap">
+    <span class="eyebrow">Cómo trabajamos</span>
+    <h2 class="h2" style="margin-top:12px">De la primera llamada a tu herramienta funcionando.</h2>
+    <p class="lead" style="margin-top:14px">Ocho pasos, tres pagos. Toca cada paso para ver qué pasa, qué recibes y qué necesito de ti.</p>
+    <div class="steps" role="tablist" aria-label="Pasos del proyecto" id="steps"></div>
+    <div class="detail" role="tabpanel" id="step-detail" aria-live="polite"></div>
+    <div class="sessions">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+      <span><b style="color:var(--fg)">Sesiones.</b> Hasta la entrega final, todas las sesiones son sin costo: la mesa técnica, la entrega del demo, la entrega final y cualquier otra sesión que no sea un requerimiento nuevo o un ajuste. Después de la entrega final, cada sesión cuesta el 5 % del valor del paquete.</span>
+    </div>
+  </div>
+</section>
+
+<!-- COTIZADOR -->
+<section id="cotizador" class="band">
+  <div class="wrap">
+    <span class="eyebrow">Cotizador</span>
+    <h2 class="h2" style="margin-top:12px">Arma tu proyecto y agenda la mesa técnica.</h2>
+    <p class="lead" style="margin-top:14px">Elige un paquete y marca lo que te gustaría tener. Verás el valor y el plan de pagos al instante, y me lo envías por WhatsApp para agendar.</p>
+    <div class="quote">
+      <form class="panel" id="qform" novalidate>
+        <h3>1 · Paquete</h3>
+        <div class="pkopts" id="pkopts"></div>
+        <h3>2 · ¿Qué te gustaría tener?</h3>
+        <div class="feats" id="feats"></div>
+        <p class="small" id="feats-note" style="margin-top:12px"></p>
+        <div class="hint" id="hint" role="status"></div>
+        <h3 style="margin-top:26px">3 · Tu negocio <span class="small" style="font-weight:400">(opcional)</span></h3>
+        <div class="fields">
+          <label for="q-name">Nombre del negocio<input id="q-name" type="text" autocomplete="organization" placeholder="Ej.: Panadería La Espiga"></label>
+          <label for="q-what">¿Qué vendes o qué servicio prestas?<input id="q-what" type="text" placeholder="Ej.: pan artesanal a domicilio"></label>
+        </div>
+      </form>
+
+      <aside class="panel summary" aria-label="Resumen de la cotización">
+        <span class="eyebrow" id="s-pk">Paquete Ventas</span>
+        <div class="total" id="s-total">$ 500.000</div>
+        <div class="small">Pago único por el desarrollo · sin mensualidad</div>
+        <div class="sumrows">
+          <div class="r"><span class="w"><i class="sw" style="background:var(--sun);opacity:.45"></i>20 % para iniciar</span><b id="s-p1">$ 100.000</b></div>
+          <div class="r"><span class="w"><i class="sw" style="background:var(--sun);opacity:.7"></i>30 % al recibir el demo</span><b id="s-p2">$ 150.000</b></div>
+          <div class="r"><span class="w"><i class="sw" style="background:var(--sun)"></i>50 % en la entrega final</span><b id="s-p3">$ 250.000</b></div>
+          <div class="r"><span>Garantía y acompañamiento mensual</span><b>Primer año incluido</b></div>
+          <div class="r"><span>Sesión después de la entrega</span><b id="s-ses">$ 25.000</b></div>
+          <div class="r" id="s-dom-row" hidden><span>Dominio propio (lo pagas al proveedor)</span><b>≈ US$ 10 – 30 al año</b></div>
+        </div>
+        <div class="sendbox">
+          <a class="btn btn-sun" id="wa-send" href="https://wa.me/573224842807" target="_blank" rel="noopener">Enviar y agendar por WhatsApp →</a>
+          <div class="copyrow"><span>WhatsApp: <b style="color:var(--fg)" id="wa-num">+57 322 484 2807</b></span><button type="button" id="copy-num">Copiar número</button></div>
+          <p class="small">Medios de pago: Bre-B, Nequi o efectivo. El valor final se confirma en el documento del proyecto, después de la mesa técnica.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- COSTOS -->
+<section id="costos">
+  <div class="wrap">
+    <span class="eyebrow">Costos de tener tu página propia</span>
+    <h2 class="h2" style="margin-top:12px">Sin letra pequeña.</h2>
+    <p class="lead" style="margin-top:14px">Esto es todo lo que implica tener tu página o aplicación funcionando: qué pagas una sola vez, qué es gratis y qué depende de ti.</p>
+    <div class="costs">
+      <table>
+        <thead><tr><th>Concepto</th><th>Qué es</th><th>Valor</th><th>Quién lo paga</th></tr></thead>
+        <tbody>
+          <tr><td>Desarrollo</td><td>Diseño, construcción, ajustes, capacitación y publicación de tu herramienta.</td><td class="amt">Según paquete</td><td><span class="who me">Pago único, en 3 partes</span></td></tr>
+          <tr><td>Alojamiento</td><td>El servidor donde vive tu página. Usamos servicios con capa gratuita permanente, suficientes para un negocio pequeño.</td><td class="amt">$ 0</td><td><span class="who zero">Sin costo</span></td></tr>
+          <tr><td>Base de datos</td><td>Donde se guardan pedidos, clientes o inventario (paquetes Ventas y A la medida), también en capa gratuita.</td><td class="amt">$ 0</td><td><span class="who zero">Sin costo</span></td></tr>
+          <tr><td>Avisos por WhatsApp</td><td>Notificación a tu celular con cada pedido o cita nueva.</td><td class="amt">$ 0</td><td><span class="who zero">Sin costo</span></td></tr>
+          <tr><td>Dominio propio <span class="small">(opcional)</span></td><td>Tu dirección propia, como tunegocio.com. Sin dominio, tu página funciona gratis en una dirección como tunegocio.pages.dev. Valores de referencia por año: .com ≈ US$ 10,46 · .com.co ≈ US$ 17,70 · .co ≈ US$ 30.</td><td class="amt">≈ US$ 10 – 30 / año</td><td><span class="who you">Tu empresa, al proveedor</span></td></tr>
+          <tr><td>Correo con tu dominio <span class="small">(opcional)</span></td><td>Cuentas como ventas@tunegocio.com. Hay planes gratuitos y de pago según cuántas cuentas necesites.</td><td class="amt">Según proveedor</td><td><span class="who you">Tu empresa, al proveedor</span></td></tr>
+          <tr><td>Pagos con tarjeta o PSE <span class="small">(opcional)</span></td><td>Si quieres cobrar en línea, la pasarela de pagos cobra una comisión por cada venta. La elegimos juntos en la mesa técnica.</td><td class="amt">Comisión por venta</td><td><span class="who you">Tu empresa, a la pasarela</span></td></tr>
+          <tr><td>Mensualidad</td><td>Durante el primer año, el de la garantía, el acompañamiento mensual está incluido en el valor del desarrollo.</td><td class="amt">$ 0</td><td><span class="who zero">Incluido</span></td></tr>
+          <tr><td>Después de la entrega</td><td>Funciones nuevas o ajustes que pidas después de la entrega final se cotizan según lo solicitado. Las sesiones cuestan el 5 % del valor del paquete.</td><td class="amt">Según lo pedido</td><td><span class="who me">Se cotiza antes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONDICIONES -->
+<section id="condiciones" class="band">
+  <div class="wrap">
+    <span class="eyebrow">Condiciones</span>
+    <h2 class="h2" style="margin-top:12px">Lo que te garantizo.</h2>
+    <div class="cond">
+      <div class="cnd"><span class="big" style="color:var(--sun)">3 rondas</span><p>de ajustes incluidas sobre el demo, antes de la entrega final.</p></div>
+      <div class="cnd"><span class="big" style="color:var(--coral)">1 año</span><p>de garantía después de la entrega final: corrijo sin costo cualquier error de lo entregado.</p></div>
+      <div class="cnd"><span class="big" style="color:var(--violet)">$ 0 al mes</span><p>El acompañamiento mensual va incluido durante el primer año, el mismo de la garantía.</p></div>
+      <div class="cnd"><span class="big">20 · 30 · 50</span><p>Pagas 20 % para iniciar, 30 % al recibir el acceso al demo y 50 % cuando la recibes completa y funcional.</p></div>
+      <div class="cnd"><span class="big">Gratis</span><p>la mesa técnica y las sesiones hasta la entrega final. Después, cada sesión cuesta el 5 % del paquete.</p></div>
+      <div class="cnd"><span class="big">Bre-B · Nequi</span><p>o efectivo. Precios finales, sin valores adicionales sobre el desarrollo.</p></div>
+    </div>
+    <div class="owner">
+      <div>
+        <h3>Todo queda a nombre de tu empresa.</h3>
+        <p>La página, el dominio, el alojamiento y la base de datos se crean con las cuentas de tu negocio. Si algún día quieres trabajar con otro proveedor, te llevas tu web tal como está construida.</p>
+      </div>
+      <div class="ico" aria-hidden="true"><span>código</span><span>dominio</span><span>alojamiento</span><span>datos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRUEBA -->
+<section id="proyectos">
+  <div class="wrap">
+    <span class="eyebrow">Ya funcionando</span>
+    <h2 class="h2" style="margin-top:12px">Herramientas que ya construí.</h2>
+    <div class="proof">
+      <div class="pr"><span class="num" style="color:var(--sun)">Ventas</span><h3>Sistema de ventas para un emprendimiento</h3><p>Tienda en línea, seguimiento del pedido, aviso de cada pedido al WhatsApp, panel de producción, pagos y análisis de ventas.</p><a href="https://jusvie.pages.dev" target="_blank" rel="noopener">Ver la tienda en vivo ↗</a></div>
+      <div class="pr"><span class="num" style="color:var(--coral)">≈120</span><h3>Calendario académico con avisos</h3><p>Personas que consultan sus sesiones y entregas desde el celular y reciben recordatorios automáticos por WhatsApp.</p><a href="https://daniel-morales-portafolio.pages.dev/#microempresas" target="_blank" rel="noopener">Ver en el portafolio ↗</a></div>
+      <div class="pr"><span class="num" style="color:var(--violet)">96</span><h3>Gestión de proyectos y tareas</h3><p>Proyectos gestionados con estados, responsables, carga de trabajo y entregas por semana, visibles para todo el equipo.</p><a href="https://daniel-morales-portafolio.pages.dev/#microempresas" target="_blank" rel="noopener">Ver en el portafolio ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREGUNTAS -->
+<section id="preguntas" class="band">
+  <div class="wrap">
+    <span class="eyebrow">Preguntas frecuentes</span>
+    <h2 class="h2" style="margin-top:12px">Lo que más me preguntan.</h2>
+    <div class="faq">
+      <details open><summary>¿Necesito saber de tecnología?</summary><p>No. Tú me cuentas cómo funciona tu negocio y yo me encargo de la parte técnica. En la capacitación te enseño a usar y administrar tu herramienta sin depender de un programador.</p></details>
+      <details><summary>¿Cuándo hago el primer pago?</summary><p>Cuando apruebas el documento del proyecto. La mesa técnica es gratis y no te compromete a nada. Después pagas el 30 % al recibir el acceso al demo y el 50 % cuando la recibes completa y funcional.</p></details>
+      <details><summary>¿Tengo que pagar una mensualidad?</summary><p>No. El alojamiento usa servicios con capa gratuita y el acompañamiento mensual está incluido durante el primer año, el de la garantía. Solo pagarías un dominio propio, si decides tenerlo, directamente al proveedor.</p></details>
+      <details><summary>¿Qué cubre la garantía de un año?</summary><p>Cualquier error de lo que se entregó: algo que no funciona como quedó acordado en el documento del proyecto. Las funciones nuevas o los cambios que pidas después de la entrega final se cotizan aparte, según lo que solicites.</p></details>
+      <details><summary>¿Qué pasa si quiero cambiar de proveedor?</summary><p>Te la llevas. Todo se crea con las cuentas de tu empresa y a su nombre: la página, el dominio, el alojamiento y los datos. Otro proveedor puede continuar desde donde está.</p></details>
+      <details><summary>¿Qué debo tener listo para la mesa técnica?</summary><p>Solo saber contarme cómo vendes y cómo trabajas hoy. Si los tienes a mano, ayudan tu lista de precios, fotos de tus productos y los formatos o cuadernos que usas para llevar las cuentas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section>
+  <div class="wrap">
+    <div class="final">
+      <div>
+        <h2>¿Tu negocio necesita orden?</h2>
+        <p>Cuéntame cómo funciona hoy y agendamos una mesa técnica gratis por videollamada.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a class="btn btn-ink" id="wa-final" href="https://wa.me/573224842807" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
+        <a class="btn btn-line" href="https://daniel-morales-portafolio.pages.dev/#microempresas" target="_blank" rel="noopener" style="border:2px solid var(--ink)">Ver mi portafolio</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Daniel Andres Morales · Servicios para microempresas</span>
+    <span>WhatsApp +57 322 484 2807 · andresinfo2703@gmail.com</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = function (n) { return '$ ' + Math.round(n).toLocaleString('es-CO'); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var WA = '573224842807';
+
+  var PK = [
+    { id: 'presencia', name: 'Presencia', kind: 'Página de una sección', price: 150000, desde: false, time: '≈ 1 semana', lim: ['1 página', 'Hasta 6 servicios destacados', 'Hasta 10 fotos'],
+      for: 'Para que te encuentren en internet y te escriban por WhatsApp.',
+      inc: ['Página de una sección adaptada al celular', 'Botón de WhatsApp, ubicación y horarios', 'Enlaces a tus redes sociales', 'Medición de visitas'] },
+    { id: 'negocio', name: 'Negocio', kind: 'Sitio con catálogo', price: 250000, desde: false, time: '≈ 2 semanas', lim: ['Hasta 5 secciones', 'Hasta 30 productos o servicios'],
+      for: 'Para mostrar todo lo que vendes, con fotos y precios.',
+      inc: ['Sitio de hasta 5 secciones', 'Catálogo de productos o servicios', 'Formulario que llega a tu WhatsApp', 'Todo lo de Presencia'] },
+    { id: 'ventas', name: 'Ventas', kind: 'Tienda con pedidos', price: 500000, desde: false, time: '≈ 3 a 4 semanas', feat: true, lim: ['Hasta 30 productos', 'Envío por zonas', '1 usuario administrador'],
+      for: 'Para recibir pedidos ordenados y saber qué se vende.',
+      inc: ['Tienda con carrito y número de pedido', 'Aviso de cada pedido a tu WhatsApp', 'Panel de pedidos, producción y pagos', 'Códigos de descuento y análisis de ventas'] },
+    { id: 'medida', name: 'A la medida', kind: 'Aplicación de gestión', price: 850000, desde: true, time: 'según alcance', lim: ['Lo definido en el documento del proyecto'],
+      for: 'Para organizar la operación: agenda, inventario o equipo.',
+      inc: ['Agenda y recordatorios automáticos', 'Inventario y compras', 'Usuarios con permisos por perfil', 'Indicadores del negocio en tiempo real'] }
+  ];
+  var EXPL = [
+    { lead: 'Una tarjeta de presentación digital.',
+      body: 'Es una sola página que se recorre hacia abajo: quién es tu negocio, tus servicios principales, unas fotos, el horario, la ubicación en el mapa, tus redes y un botón de WhatsApp.',
+      goal: 'Que el cliente te encuentre y te escriba.',
+      who: 'Para el negocio que hoy no existe en internet o solo tiene Instagram.', ex: ['Peluquerías', 'Talleres', 'Abogados independientes', 'Tiendas de barrio'],
+      no: 'No tiene catálogo completo ni pedidos.' },
+    { lead: 'Una vitrina con todo lo que vendes.',
+      body: 'Es un sitio con varias secciones: inicio, quiénes somos, catálogo o servicios, galería y contacto. El catálogo muestra cada producto con foto, descripción y precio. Tu cliente elige y te escribe por WhatsApp con el producto ya mencionado en el mensaje.',
+      goal: 'Que vean todo lo que vendes.',
+      who: 'Para negocios con varios productos o servicios que mostrar.', ex: ['Panaderías', 'Ferreterías', 'Restaurantes con su menú', 'Consultorios'],
+      no: 'La venta se sigue cerrando a mano por WhatsApp: no hay carrito, ni número de pedido, ni panel de control.' },
+    { lead: 'Una tienda en línea con su panel de pedidos.',
+      body: 'Es el mismo sistema que construí para un emprendimiento que ya vende en línea:',
+      how: ['Tu cliente arma su pedido en un carrito, con descuentos y costo de envío por zona.', 'Recibe un número de pedido y sigue su estado.', 'A ti te llega un aviso a tu WhatsApp con cada pedido.', 'En un panel privado mueves los pedidos por estados, registras pagos, creas códigos de descuento y ves qué se vende, cuándo y dónde.'],
+      goal: 'Que te compren en línea y controles tus pedidos.',
+      who: 'Para negocios que venden a domicilio o por redes sociales.', ex: ['Domicilios', 'Comida', 'Productos por encargo', 'Emprendimientos en redes'],
+      no: 'No incluye el cobro automático con tarjeta (es opcional, con una pasarela de pagos), ni facturación electrónica, ni inventario.',
+      link: { href: 'https://jusvie.pages.dev', t: 'Ver la tienda en vivo ↗' } },
+    { lead: 'Una aplicación para organizar tu negocio por dentro.',
+      body: 'Su objetivo no es vender, sino ordenar la operación: agenda y citas con recordatorios, inventario, seguimiento de tareas o proyectos, usuarios con permisos e indicadores.',
+      goal: 'Que tu operación funcione ordenada.',
+      who: 'Ejemplos que ya construí:', ex: ['Calendario académico', 'Gestión de proyectos', 'Mapa de cobertura'],
+      no: 'Por eso el precio dice «desde»: cada caso es distinto y el valor real sale de la mesa técnica.', noLabel: 'Sobre el precio',
+      link: { href: 'https://daniel-morales-portafolio.pages.dev/#microempresas', t: 'Ver ejemplos en el portafolio ↗' } }
+  ];
+  var FEATS = [
+    { id: 'wa', t: 'Botón y avisos de WhatsApp', tier: 0 },
+    { id: 'redes', t: 'Redes, ubicación y horarios', tier: 0 },
+    { id: 'catalogo', t: 'Catálogo con fotos y precios', tier: 1 },
+    { id: 'form', t: 'Formulario de contacto', tier: 1 },
+    { id: 'pedidos', t: 'Pedidos y carrito de compras', tier: 2 },
+    { id: 'pagos', t: 'Control de pagos y saldos', tier: 2 },
+    { id: 'descuentos', t: 'Códigos de descuento', tier: 2 },
+    { id: 'analisis', t: 'Análisis de ventas', tier: 2 },
+    { id: 'agenda', t: 'Agenda y recordatorios', tier: 3 },
+    { id: 'inventario', t: 'Inventario y compras', tier: 3 },
+    { id: 'usuarios', t: 'Usuarios con permisos', tier: 3 },
+    { id: 'dominio', t: 'Dominio propio (.com / .co)', tier: 0, third: true }
+  ];
+  var STEPS = [
+    { t: 'Mesa técnica', b: ['free', 'Gratis'], what: 'Una videollamada para conocer tu negocio: qué vendes, cómo trabajas hoy, dónde se pierde tiempo o dinero y qué es lo más urgente.', get: 'Un diagnóstico claro y el paquete que mejor se ajusta a lo que necesitas.', need: 'Que me cuentes tu día a día. Si los tienes, ejemplos: lista de precios, fotos o los formatos que usas.' },
+    { t: 'Documentación', b: ['pay', 'Pago 1 · 20 % para iniciar'], what: 'Organizo lo que hablamos en un documento del proyecto: funciones, pantallas, lo que incluye y lo que no, tiempos y valor.', get: 'El documento del proyecto para revisar y aprobar.', need: 'Tu aprobación y el 20 % para iniciar la construcción.' },
+    { t: 'Modelo inicial', b: ['info', 'Construcción'], what: 'Construyo la primera versión funcional con la información real de tu negocio.', get: 'Avances cada vez que hay algo para mostrar.', need: 'Logo, fotos, textos y precios de tus productos o servicios.' },
+    { t: 'Entrega del demo', b: ['pay', 'Pago 2 · 30 % al recibir el acceso'], what: 'En una sesión sin costo te muestro el demo funcionando y te doy acceso para que lo pruebes con calma.', get: 'Acceso al demo para probarlo desde tu celular o computador.', need: 'Probarlo, anotar lo que quieras cambiar y el 30 % al recibir el acceso.' },
+    { t: 'Ajustes', b: ['info', '3 rondas incluidas'], what: 'Ajustamos con tus comentarios en hasta tres rondas: textos, colores, orden, campos y detalles de funcionamiento.', get: 'Una versión ajustada después de cada ronda.', need: 'Tus comentarios agrupados en cada ronda.' },
+    { t: 'Capacitación', b: ['free', 'Sin costo'], what: 'Te enseño a ti y a tu equipo a usar y administrar la herramienta: registrar, consultar y cambiar productos o precios.', get: 'Sesión de capacitación y una guía corta de uso.', need: 'Que asistan las personas que la van a usar.' },
+    { t: 'Entrega final', b: ['pay', 'Pago 3 · 50 % completa y funcional'], what: 'Publico la herramienta funcionando, con tu dominio si lo tienes, y con todas las cuentas a nombre de tu empresa.', get: 'Tu herramienta publicada, los accesos y las cuentas a tu nombre.', need: 'Crear o autorizar las cuentas de tu empresa y el 50 % final.' },
+    { t: 'Garantía y acompañamiento', b: ['free', '1 año incluido'], what: 'Durante el primer año después de la entrega corrijo sin costo cualquier error de lo entregado y te acompaño mes a mes. Las funciones nuevas o los ajustes posteriores se cotizan según lo que pidas.', get: 'Garantía y acompañamiento mensual incluidos durante el primer año.', need: 'Avisarme si algo no funciona como quedó acordado.' }
+  ];
+
+  /* ---------- Paquetes ---------- */
+  $('pk-grid').innerHTML = PK.map(function (p, i) {
+    return '<article class="pk' + (p.feat ? ' pk-star' : '') + '">' + (p.feat ? '<span class="tag">El más pedido</span>' : '') +
+      '<span class="kind">' + esc(p.kind) + '</span><h3>' + esc(p.name) + '</h3>' +
+      '<div class="price"><small>' + (p.desde ? 'desde' : 'valor final') + '</small>' + fmt(p.price) + '</div>' +
+      '<p class="for">' + esc(p.for) + '</p><ul>' + p.inc.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
+      '<div class="lim"><span class="k">' + (p.desde ? 'Alcance' : 'Límites') + '</span><div>' + p.lim.map(function (l) { return '<span class="c">' + esc(l) + '</span>'; }).join('') + '</div></div>' +
+      '<div class="meta"><span>Tiempo estimado</span><b>' + esc(p.time) + '</b></div>' +
+      '<button type="button" class="what" data-ex="' + i + '">¿Qué es ' + esc(p.name) + '? Qué incluye y qué no ↓</button>' +
+      '<button type="button" class="btn btn-ghost pick" data-pk="' + i + '">Cotizar ' + esc(p.name) + '</button></article>';
+  }).join('');
+  var exCur = 2;
+  $('ex-tabs').innerHTML = PK.map(function (p, i) {
+    return '<button type="button" class="ex-tab" role="tab" id="ex-t' + i + '" aria-controls="ex-panel" data-e="' + i + '">' + esc(p.name) + '</button>';
+  }).join('');
+  function showEx(i) {
+    exCur = i; var x = EXPL[i], p = PK[i];
+    document.querySelectorAll('.ex-tab').forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); b.tabIndex = k === i ? 0 : -1; });
+    $('ex-panel').setAttribute('aria-labelledby', 'ex-t' + i);
+    $('ex-panel').innerHTML =
+      '<div><span class="mono" style="font-size:12px;color:var(--fg-3)">' + esc(p.name.toUpperCase()) + ' · ' + (p.desde ? 'DESDE ' : '') + fmt(p.price) + '</span>' +
+      '<div class="lead-in" style="margin-top:8px">' + esc(x.lead) + '</div><p class="body">' + esc(x.body) + '</p>' +
+      (x.how ? '<ul class="how">' + x.how.map(function (h) { return '<li>' + esc(h) + '</li>'; }).join('') + '</ul>' : '') + '</div>' +
+      '<div class="ex-side"><div><span class="k">Su objetivo</span><div class="goal">' + esc(x.goal) + '</div></div>' +
+      '<div><span class="k">Para quién es</span><div class="small" style="font-size:14.5px;color:var(--fg-2);margin-top:4px">' + esc(x.who) + '</div><div class="chips">' + x.ex.map(function (c) { return '<span class="chip">' + esc(c) + '</span>'; }).join('') + '</div></div>' +
+      '<div><span class="k">' + (p.desde ? 'Alcance' : 'Límites') + '</span><div class="lims">' + p.lim.map(function (l) { return '<span>' + esc(l) + '</span>'; }).join('') + '</div></div>' +
+      '<div class="no"><b>' + esc(x.noLabel || 'Ten en cuenta') + ' · </b>' + esc(x.no) + '</div>' +
+      (x.link ? '<a class="ex-link" href="' + x.link.href + '" target="_blank" rel="noopener">' + esc(x.link.t) + '</a>' : '') +
+      '<button type="button" class="btn btn-sun" data-pk="' + i + '">Cotizar ' + esc(p.name) + ' →</button></div>';
+  }
+  $('ex-tabs').addEventListener('click', function (e) { var b = e.target.closest('[data-e]'); if (b) showEx(+b.getAttribute('data-e')); });
+  $('ex-tabs').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var n = (exCur + (e.key === 'ArrowRight' ? 1 : 3)) % 4; showEx(n); $('ex-t' + n).focus();
+  });
+  $('ex-panel').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-pk]'); if (!b) return;
+    setPk(+b.getAttribute('data-pk')); $('cotizador').scrollIntoView({ behavior: 'smooth' });
+  });
+  showEx(2);
+  $('pk-grid').addEventListener('click', function (e) {
+    var w = e.target.closest('[data-ex]');
+    if (w) { showEx(+w.getAttribute('data-ex')); $('que-es').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    var b = e.target.closest('[data-pk]'); if (!b) return;
+    setPk(+b.getAttribute('data-pk')); $('cotizador').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  /* ---------- Proceso ---------- */
+  var cur = 0;
+  $('steps').innerHTML = STEPS.map(function (s, i) {
+    return '<button type="button" class="step" role="tab" id="st-' + i + '" aria-controls="step-detail" data-s="' + i + '">' +
+      (s.b[0] === 'pay' ? '<i class="pdot" aria-hidden="true"></i>' : '') +
+      '<span class="n">' + (i + 1) + '</span><span>' + esc(s.t) + '</span></button>';
+  }).join('');
+  function showStep(i) {
+    cur = i; var s = STEPS[i];
+    document.querySelectorAll('.step').forEach(function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); b.tabIndex = k === i ? 0 : -1; });
+    $('step-detail').setAttribute('aria-labelledby', 'st-' + i);
+    $('step-detail').innerHTML =
+      '<div style="display:flex;flex-direction:column;gap:14px"><span class="mono" style="font-size:12px;color:var(--fg-3)">PASO ' + (i + 1) + ' DE 8</span><h3>' + esc(s.t) + '</h3>' +
+      '<span class="badge ' + s.b[0] + '">' + esc(s.b[1]) + '</span>' +
+      '<div class="step-nav">' + (i > 0 ? '<button type="button" class="btn btn-ghost" data-go="' + (i - 1) + '">← Anterior</button>' : '') +
+      (i < 7 ? '<button type="button" class="btn btn-ghost" data-go="' + (i + 1) + '">Siguiente →</button>' : '<a class="btn btn-sun" href="#cotizador">Cotizar mi proyecto →</a>') + '</div></div>' +
+      '<div class="kv"><div><span class="k">Qué pasa</span><span class="v">' + esc(s.what) + '</span></div>' +
+      '<div><span class="k">Qué recibes</span><span class="v">' + esc(s.get) + '</span></div>' +
+      '<div><span class="k">Qué necesito de ti</span><span class="v">' + esc(s.need) + '</span></div></div>';
+  }
+  $('steps').addEventListener('click', function (e) { var b = e.target.closest('[data-s]'); if (b) showStep(+b.getAttribute('data-s')); });
+  $('steps').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var n = (cur + (e.key === 'ArrowRight' ? 1 : 7)) % 8; showStep(n); $('st-' + n).focus();
+  });
+  $('step-detail').addEventListener('click', function (e) { var b = e.target.closest('[data-go]'); if (b) showStep(+b.getAttribute('data-go')); });
+  showStep(0);
+
+  /* ---------- Ficha animada del héroe ---------- */
+  var PAYAT = { 1: 0.2, 3: 0.5, 6: 1 };
+  $('tk-list').innerHTML = STEPS.map(function (s, i) {
+    var p = i === 1 ? '20 %' : i === 3 ? '30 %' : i === 6 ? '50 %' : '';
+    return '<li><span class="dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span>' + esc(s.t) + '</span>' + (p ? '<span class="pay">' + p + '</span>' : '') + '</li>';
+  }).join('');
+  var tk = 3;
+  function paint() {
+    var items = $('tk-list').children, paid = 0;
+    for (var i = 0; i < items.length; i++) {
+      items[i].className = i < tk ? 'done' : (i === tk ? 'now' : '');
+      if (i <= tk && PAYAT[i]) paid = PAYAT[i];
+    }
+    $('tk-status').textContent = tk >= 8 ? 'Entregado ✓' : STEPS[tk].t;
+    if (tk >= 8) { for (var j = 0; j < items.length; j++) items[j].className = 'done'; paid = 1; }
+    $('tk-paid').textContent = fmt(500000 * paid) + ' de ' + fmt(500000);
+    $('sg1').className = paid >= 0.2 ? 'on' : ''; $('sg2').className = paid >= 0.5 ? 'on' : ''; $('sg3').className = paid >= 1 ? 'on' : '';
+  }
+  paint();
+  setInterval(function () { tk = tk >= 8 ? 0 : tk + 1; paint(); }, 1800);
+
+  /* ---------- Cotizador ---------- */
+  var pk = 2;
+  $('pkopts').innerHTML = PK.map(function (p, i) {
+    return '<div class="opt"><input type="radio" name="pk" id="pk-' + i + '" value="' + i + '"><label for="pk-' + i + '"><b>' + esc(p.name) + '</b><span>' + (p.desde ? 'desde ' : '') + fmt(p.price) + '</span></label></div>';
+  }).join('');
+  $('feats').innerHTML = FEATS.map(function (f) {
+    return '<label class="feat" for="f-' + f.id + '"><input type="checkbox" id="f-' + f.id + '" value="' + f.id + '"><span>' + esc(f.t) + '</span></label>';
+  }).join('');
+  ['wa', 'catalogo', 'pedidos', 'analisis'].forEach(function (id) { $('f-' + id).checked = true; });
+
+  var shown = 0, anim;
+  function countTo(v) {
+    cancelAnimationFrame(anim); var from = shown, t0 = performance.now();
+    (function step(t) { var k = Math.min(1, (t - t0) / 450); shown = from + (v - from) * (1 - Math.pow(1 - k, 3)); $('s-total').textContent = fmt(shown); if (k < 1) anim = requestAnimationFrame(step); })(t0);
+  }
+  function selected() { return FEATS.filter(function (f) { return $('f-' + f.id).checked; }); }
+  function setPk(i) { pk = i; $('pk-' + i).checked = true; update(); }
+  function update() {
+    FEATS.forEach(function (f) {
+      var box = $('f-' + f.id), ok = f.tier <= pk;
+      box.closest('.feat').hidden = !ok;
+      if (!ok) box.checked = false;
+    });
+    var p = PK[pk], sel = selected();
+    $('s-pk').textContent = 'Paquete ' + p.name + (p.desde ? ' · desde' : '');
+    countTo(p.price);
+    $('s-p1').textContent = fmt(p.price * 0.2); $('s-p2').textContent = fmt(p.price * 0.3); $('s-p3').textContent = fmt(p.price * 0.5);
+    $('s-ses').textContent = fmt(p.price * 0.05);
+    $('s-dom-row').hidden = !$('f-dominio').checked;
+    var more = FEATS.filter(function (f) { return f.tier === pk + 1; }).slice(0, 3).map(function (f) { return f.t.toLowerCase(); });
+    $('feats-note').textContent = 'Ves las funciones que aplican al paquete ' + p.name + '.' +
+      (pk < 3 ? ' Si necesitas ' + more.join(', ') + ' u otras, elige un paquete superior.' : '');
+    var name = $('q-name').value.trim(), what = $('q-what').value.trim();
+    var msg = 'Hola Daniel, quiero agendar una mesa técnica.\n' +
+      (name ? 'Negocio: ' + name + '\n' : '') + (what ? 'Vendo / ofrezco: ' + what + '\n' : '') +
+      'Paquete: ' + p.name + ' (' + (p.desde ? 'desde ' : '') + fmt(p.price) + ')\n' +
+      (sel.length ? 'Me interesa: ' + sel.map(function (f) { return f.t; }).join(', ') + '\n' : '') +
+      'Vi la cotización en tu página de servicios.';
+    $('wa-send').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+  }
+  $('pkopts').addEventListener('change', function (e) { if (e.target.name === 'pk') { pk = +e.target.value; update(); } });
+  $('feats').addEventListener('change', update);
+  $('hint').addEventListener('click', function (e) { var b = e.target.closest('[data-up]'); if (b) setPk(+b.getAttribute('data-up')); });
+  $('q-name').addEventListener('input', update); $('q-what').addEventListener('input', update);
+  $('qform').addEventListener('submit', function (e) { e.preventDefault(); });
+  $('wa-final').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Daniel, tengo un negocio y me gustaría agendar una mesa técnica.');
+  $('copy-num').addEventListener('click', function () {
+    var b = this, done = function () { b.textContent = 'Copiado'; setTimeout(function () { b.textContent = 'Copiar número'; }, 1800); };
+    try {
+      navigator.clipboard.writeText('+573224842807').then(done, function () { selectNum(); });
+    } catch (err) { selectNum(); }
+  });
+  function selectNum() { var r = document.createRange(); r.selectNodeContents($('wa-num')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+  setPk(2);
+})();
+</script>
+</body>
+</html>

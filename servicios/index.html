@@ -702,9 +702,13 @@ footer a{color:var(--fg-2)}
   ['wa', 'catalogo', 'pedidos', 'analisis'].forEach(function (id) { $('f-' + id).checked = true; });
 
   var shown = 0, anim;
+  var settle;
   function countTo(v) {
-    cancelAnimationFrame(anim); var from = shown, t0 = performance.now();
-    (function step(t) { var k = Math.max(0, Math.min(1, (t - t0) / 450)); shown = from + (v - from) * (1 - Math.pow(1 - k, 3)); $('s-total').textContent = fmt(shown); if (k < 1) anim = requestAnimationFrame(step); })(t0);
+    cancelAnimationFrame(anim); clearTimeout(settle);
+    var from = shown, t0 = performance.now(), show = function (x) { $('s-total').textContent = fmt(x); };
+    if (!from) { shown = v; show(v); return; }
+    (function step(t) { var k = Math.max(0, Math.min(1, (t - t0) / 450)); shown = from + (v - from) * (1 - Math.pow(1 - k, 3)); show(shown); if (k < 1) anim = requestAnimationFrame(step); })(t0);
+    settle = setTimeout(function () { cancelAnimationFrame(anim); shown = v; show(v); }, 600);
   }
   function selected() { return FEATS.filter(function (f) { return $('f-' + f.id).checked; }); }
   function setPk(i) { pk = i; $('pk-' + i).checked = true; update(); }

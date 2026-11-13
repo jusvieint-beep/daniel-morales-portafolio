@@ -159,7 +159,7 @@ nav.links a:hover{background:rgba(255,255,255,.07);color:var(--fg)}
 /* Precios en dos monedas */
 .cop{font-family:var(--mono);font-size:12.5px;color:var(--fg-3);margin-top:6px;font-variant-numeric:tabular-nums}
 .copx{display:block;font-family:var(--mono);font-size:11.5px;font-weight:400;color:var(--fg-3)}
-/* Objetivo y ficha para compartir */
+/* Objetivo */
 .goal-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center}
 @media (max-width:900px){.goal-grid{grid-template-columns:minmax(0,1fr)}}
 .pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:26px}
@@ -168,12 +168,6 @@ nav.links a:hover{background:rgba(255,255,255,.07);color:var(--fg)}
 .pillar b{font-size:15.5px}
 .pillar span{font-size:14px;color:var(--fg-2);line-height:1.5}
 .pillar i{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--sun)}
-.share{background:var(--card);border:1px solid var(--line-2);border-radius:24px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
-.share img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line)}
-.share .btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.share .btns .btn{width:100%;min-height:46px;padding:10px 12px;font-size:14px}
-.share .btns .wide{grid-column:1/-1}
-.share .share-msg{font-size:13px;color:var(--ok);min-height:1.3em}
 
 /* Proceso */
 .steps{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-top:40px;position:relative}
@@ -371,8 +365,8 @@ footer a{color:var(--fg-2)}
 
 <!-- OBJETIVO + FICHA -->
 <section id="objetivo" class="band">
-  <div class="wrap goal-grid">
-    <div style="min-width:0">
+  <div class="wrap">
+    <div style="min-width:0;max-width:960px">
       <span class="eyebrow">El objetivo</span>
       <h2 class="h2" style="margin-top:12px">Precios de arranque para crecer juntos.</h2>
       <p class="lead" style="margin-top:14px">Estos servicios son para emprendimientos que aún están iniciando y necesitan una página estructurada, más visibilidad ante sus clientes y más ingresos. Por eso el costo de creación es bajo: la idea es desarrollar juntos las mejoras que vayamos encontrando y ver los resultados en tus números.</p>
@@ -382,15 +376,6 @@ footer a{color:var(--fg-2)}
         <div class="pillar"><i>03</i><b>Más ingresos</b><span>Revisamos juntos visitas, mensajes y ventas para decidir qué mejorar.</span></div>
       </div>
     </div>
-    <aside class="share" aria-label="Ficha para compartir">
-      <img src="ficha.png" width="1080" height="1350" alt="Ficha de servicios para emprendimientos: Presencia US$ 15, Negocio US$ 30, Ventas US$ 45 y A la medida desde US$ 76" loading="lazy">
-      <div class="btns">
-        <button type="button" class="btn btn-sun wide" id="share-wa">Compartir ficha por WhatsApp</button>
-        <button type="button" class="btn btn-ghost" id="share-copy">Copiar mensaje</button>
-        <a class="btn btn-ghost" id="share-img" href="ficha.png" download="Ficha_servicios_emprendimientos.png">Descargar imagen</a>
-      </div>
-      <p class="share-msg" id="share-status" role="status"></p>
-    </aside>
   </div>
 </section>
 
@@ -798,30 +783,6 @@ footer a{color:var(--fg-2)}
     } catch (err) { selectNum(); }
   });
   function selectNum() { var r = document.createRange(); r.selectNodeContents($('wa-num')); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
-  /* ---------- Ficha para compartir ---------- */
-  var MSG = '*Tu emprendimiento en internet, desde US$ 15* \n\n' +
-    'Páginas web para emprendimientos que están empezando: una página estructurada, más visibilidad ante tus clientes y más ingresos. Construimos juntos y medimos los resultados en tus números.\n\n' +
-    PK.map(function (p) { return '• ' + p.name + ': ' + (p.desde ? 'desde ' : '') + usd(p.price) + ' (' + fmt(p.price) + ' COP)'; }).join('\n') + '\n\n' +
-    'Mesa técnica gratis · 3 rondas de ajustes · 1 año de garantía\n\n' +
-    'Mira los servicios: ' + SITE + '\n' +
-    'Escríbeme por WhatsApp: https://wa.me/' + WA;
-  function say(t) { $('share-status').textContent = t; setTimeout(function () { $('share-status').textContent = ''; }, 3500); }
-  function copyMsg() {
-    try { return navigator.clipboard.writeText(MSG).then(function () { say('Mensaje copiado. Pégalo en WhatsApp.'); return true; }, function () { say('No se pudo copiar automáticamente.'); return false; }); }
-    catch (e) { say('No se pudo copiar automáticamente.'); return Promise.resolve(false); }
-  }
-  $('share-copy').addEventListener('click', copyMsg);
-  $('share-wa').addEventListener('click', function () {
-    var openWa = function () { window.location.href = 'https://wa.me/?text=' + encodeURIComponent(MSG); };
-    if (!navigator.share || !window.fetch || !window.File) { openWa(); return; }
-    fetch('ficha.png').then(function (r) { return r.blob(); }).then(function (b) {
-      var file = new File([b], 'Ficha_servicios_emprendimientos.png', { type: 'image/png' });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        return navigator.share({ files: [file], text: MSG }).catch(function (err) { if (err && err.name !== 'AbortError') openWa(); });
-      }
-      openWa();
-    }).catch(openWa);
-  });
   setPk(2);
 })();
 </script>

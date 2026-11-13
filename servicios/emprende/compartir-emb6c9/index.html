@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Compartir ficha · Emprende</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23121A30'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-weight='800' font-size='26' text-anchor='middle' fill='%23F4F6FA'%3ED%3Ctspan fill='%23FFD25E'%3EM%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#121A30;--card:#1E2847;--line:rgba(255,255,255,.14);--line-2:rgba(255,255,255,.26);--fg:#F4F6FA;--fg-2:#D3D9E4;--fg-3:#BAC3D3;--sun:#FFD25E;--ok:#7FE0A8;--ink:#121A30;
+--display:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:1040px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px));display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px;align-items:start}
+@media (max-width:820px){.wrap{grid-template-columns:minmax(0,1fr)}}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,4vw,40px);line-height:1.05;letter-spacing:-.02em;margin:6px 0 10px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--sun)}
+p{margin:0;color:var(--fg-2)}
+img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;border-radius:14px;font:600 15px var(--body);text-decoration:none;cursor:pointer;border:1px solid var(--line-2);background:transparent;color:var(--fg);width:100%}
+.btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun)}
+.btns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.btns .wide{grid-column:1/-1}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+label{font-size:13px;color:var(--fg-3)}
+textarea{width:100%;min-height:300px;resize:vertical;font:14px/1.5 var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line-2);border-radius:14px;padding:14px}
+.msg{font-size:13.5px;color:var(--ok);min-height:1.3em}
+.note{font-size:13px;color:var(--fg-3)}
+a{color:var(--sun)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+    <div>
+      <span class="eyebrow">Solo para ti · no está enlazada en el sitio</span>
+      <h1>Compartir la ficha de emprendimientos</h1>
+      <p>Envía la imagen con el mensaje por WhatsApp, o copia el mensaje y descarga la imagen por separado.</p>
+    </div>
+    <img src="../ficha.png" width="1080" height="1350" alt="Ficha de servicios para emprendimientos con precios en dólares y pesos, QR y WhatsApp">
+  </div>
+  <div class="panel">
+    <div class="btns">
+      <button type="button" class="btn btn-sun wide" id="share-wa">Compartir imagen y mensaje por WhatsApp</button>
+      <button type="button" class="btn" id="share-copy">Copiar mensaje</button>
+      <a class="btn" href="../ficha.png" download="Ficha_servicios_emprendimientos.png">Descargar imagen</a>
+    </div>
+    <p class="msg" id="status" role="status"></p>
+    <label for="msg-text">Mensaje (puedes editarlo antes de copiar)</label>
+    <textarea id="msg-text">*Tu emprendimiento en internet, desde US$ 15*
+
+Páginas web para emprendimientos que están empezando: una página estructurada, más visibilidad ante tus clientes y más ingresos. Construimos juntos y medimos los resultados en tus números.
+
+• Presencia: US$ 15 ($ 50.000 COP)
+• Negocio: US$ 30 ($ 100.000 COP)
+• Ventas: US$ 45 ($ 150.000 COP)
+• A la medida: desde US$ 76 ($ 250.000 COP)
+
+Mesa técnica gratis · 3 rondas de ajustes · 1 año de garantía
+
+Mira los servicios: https://daniel-morales-servicios.pages.dev/emprende/
+Escríbeme por WhatsApp: https://wa.me/573224842807</textarea>
+    <p class="note">Página pública: <a href="https://daniel-morales-servicios.pages.dev/emprende/" target="_blank" rel="noopener">daniel-morales-servicios.pages.dev/emprende/</a>. En celular, el botón amarillo abre WhatsApp con la imagen y el mensaje. En computador abre WhatsApp con el mensaje y el enlace, y la vista previa del enlace muestra la imagen.</p>
+  </div>
+</main>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var text = function () { return $('msg-text').value; };
+  function say(t) { $('status').textContent = t; clearTimeout(say.t); say.t = setTimeout(function () { $('status').textContent = ''; }, 3500); }
+  $('share-copy').addEventListener('click', function () {
+    var fallback = function () { $('msg-text').select(); say('Selecciona y copia el texto con Ctrl + C.'); };
+    try { navigator.clipboard.writeText(text()).then(function () { say('Mensaje copiado. Pégalo en WhatsApp.'); }, fallback); } catch (e) { fallback(); }
+  });
+  $('share-wa').addEventListener('click', function () {
+    var openWa = function () { window.location.href = 'https://wa.me/?text=' + encodeURIComponent(text()); };
+    if (!navigator.share || !window.fetch || !window.File) { openWa(); return; }
+    fetch('../ficha.png').then(function (r) { return r.blob(); }).then(function (b) {
+      var file = new File([b], 'Ficha_servicios_emprendimientos.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        return navigator.share({ files: [file], text: text() }).catch(function (err) { if (err && err.name !== 'AbortError') openWa(); });
+      }
+      openWa();
+    }).catch(openWa);
+  });
+})();
+</script>
+</body>
+</html>

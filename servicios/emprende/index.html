@@ -564,7 +564,7 @@ footer a{color:var(--fg-2)}
 
 <footer>
   <div class="wrap">
-    <span>Daniel Andres Morales · Servicios para microempresas</span>
+    <span>Daniel Andres Morales · Servicios para emprendimientos</span>
     <span>WhatsApp +57 322 484 2807 · andresinfo2703@gmail.com</span>
   </div>
 </footer>
@@ -753,7 +753,7 @@ footer a{color:var(--fg-2)}
   var shown = 0, anim;
   function countTo(v) {
     cancelAnimationFrame(anim); var from = shown, t0 = performance.now();
-    (function step(t) { var k = Math.min(1, (t - t0) / 450); shown = from + (v - from) * (1 - Math.pow(1 - k, 3)); $('s-total').textContent = usd(shown); if (k < 1) anim = requestAnimationFrame(step); })(t0);
+    (function step(t) { var k = Math.max(0, Math.min(1, (t - t0) / 450)); shown = from + (v - from) * (1 - Math.pow(1 - k, 3)); $('s-total').textContent = usd(shown); if (k < 1) anim = requestAnimationFrame(step); })(t0);
   }
   function selected() { return FEATS.filter(function (f) { return $('f-' + f.id).checked; }); }
   function setPk(i) { pk = i; $('pk-' + i).checked = true; update(); }
